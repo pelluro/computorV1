@@ -1,1 +1,1 @@
-/bin/c++  -g   CMakeFiles/Computor1.dir/main.cpp.o  -o Computor1 
+/bin/c++  -g   CMakeFiles/Computor1.dir/main.cpp.o CMakeFiles/Computor1.dir/test.cpp.o CMakeFiles/Computor1.dir/Sample.cpp.o  -o Computor1 

@@ -84,7 +84,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/pelluro/Documents/Work/Computor1/Sample.cpp">
+			<Option target="Computor1"/>
+		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/Computor1/Sample.h">
+			<Option target="Computor1"/>
+		</Unit>
 		<Unit filename="/home/pelluro/Documents/Work/Computor1/main.cpp">
+			<Option target="Computor1"/>
+		</Unit>
+		<Unit filename="/home/pelluro/Documents/Work/Computor1/test.cpp">
 			<Option target="Computor1"/>
 		</Unit>
 		<Unit filename="/home/pelluro/Documents/Work/Computor1/CMakeLists.txt">

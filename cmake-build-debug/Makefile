@@ -123,6 +123,33 @@ Computor1/fast:
 	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/build
 .PHONY : Computor1/fast
 
+Sample.o: Sample.cpp.o
+
+.PHONY : Sample.o
+
+# target to build an object file
+Sample.cpp.o:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Sample.cpp.o
+.PHONY : Sample.cpp.o
+
+Sample.i: Sample.cpp.i
+
+.PHONY : Sample.i
+
+# target to preprocess a source file
+Sample.cpp.i:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Sample.cpp.i
+.PHONY : Sample.cpp.i
+
+Sample.s: Sample.cpp.s
+
+.PHONY : Sample.s
+
+# target to generate assembly for a file
+Sample.cpp.s:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Sample.cpp.s
+.PHONY : Sample.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -150,6 +177,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+test.o: test.cpp.o
+
+.PHONY : test.o
+
+# target to build an object file
+test.cpp.o:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/test.cpp.o
+.PHONY : test.cpp.o
+
+test.i: test.cpp.i
+
+.PHONY : test.i
+
+# target to preprocess a source file
+test.cpp.i:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/test.cpp.i
+.PHONY : test.cpp.i
+
+test.s: test.cpp.s
+
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.cpp.s:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/test.cpp.s
+.PHONY : test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +213,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Computor1"
 	@echo "... edit_cache"
+	@echo "... Sample.o"
+	@echo "... Sample.i"
+	@echo "... Sample.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 
