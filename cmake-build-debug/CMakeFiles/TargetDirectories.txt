@@ -1,0 +1,3 @@
+/home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles/Computor1.dir
+/home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles/edit_cache.dir

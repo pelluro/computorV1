@@ -1,0 +1,1 @@
+/bin/c++  -g   CMakeFiles/Computor1.dir/main.cpp.o  -o Computor1 
