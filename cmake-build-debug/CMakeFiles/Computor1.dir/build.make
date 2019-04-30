@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pelluro/Documents/Work/Computor1
+CMAKE_SOURCE_DIR = /Users/mipham/Documents/computorV1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pelluro/Documents/Work/Computor1/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/mipham/Documents/computorV1/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Computor1.dir/depend.make
@@ -59,42 +59,42 @@ include CMakeFiles/Computor1.dir/flags.make
 
 CMakeFiles/Computor1.dir/main.cpp.o: CMakeFiles/Computor1.dir/flags.make
 CMakeFiles/Computor1.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Computor1.dir/main.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Computor1.dir/main.cpp.o -c /home/pelluro/Documents/Work/Computor1/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mipham/Documents/computorV1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Computor1.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Computor1.dir/main.cpp.o -c /Users/mipham/Documents/computorV1/main.cpp
 
 CMakeFiles/Computor1.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Computor1.dir/main.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pelluro/Documents/Work/Computor1/main.cpp > CMakeFiles/Computor1.dir/main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mipham/Documents/computorV1/main.cpp > CMakeFiles/Computor1.dir/main.cpp.i
 
 CMakeFiles/Computor1.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Computor1.dir/main.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pelluro/Documents/Work/Computor1/main.cpp -o CMakeFiles/Computor1.dir/main.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mipham/Documents/computorV1/main.cpp -o CMakeFiles/Computor1.dir/main.cpp.s
 
 CMakeFiles/Computor1.dir/test.cpp.o: CMakeFiles/Computor1.dir/flags.make
 CMakeFiles/Computor1.dir/test.cpp.o: ../test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Computor1.dir/test.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Computor1.dir/test.cpp.o -c /home/pelluro/Documents/Work/Computor1/test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mipham/Documents/computorV1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Computor1.dir/test.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Computor1.dir/test.cpp.o -c /Users/mipham/Documents/computorV1/test.cpp
 
 CMakeFiles/Computor1.dir/test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Computor1.dir/test.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pelluro/Documents/Work/Computor1/test.cpp > CMakeFiles/Computor1.dir/test.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mipham/Documents/computorV1/test.cpp > CMakeFiles/Computor1.dir/test.cpp.i
 
 CMakeFiles/Computor1.dir/test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Computor1.dir/test.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pelluro/Documents/Work/Computor1/test.cpp -o CMakeFiles/Computor1.dir/test.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mipham/Documents/computorV1/test.cpp -o CMakeFiles/Computor1.dir/test.cpp.s
 
 CMakeFiles/Computor1.dir/Sample.cpp.o: CMakeFiles/Computor1.dir/flags.make
 CMakeFiles/Computor1.dir/Sample.cpp.o: ../Sample.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Computor1.dir/Sample.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Computor1.dir/Sample.cpp.o -c /home/pelluro/Documents/Work/Computor1/Sample.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mipham/Documents/computorV1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Computor1.dir/Sample.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Computor1.dir/Sample.cpp.o -c /Users/mipham/Documents/computorV1/Sample.cpp
 
 CMakeFiles/Computor1.dir/Sample.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Computor1.dir/Sample.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pelluro/Documents/Work/Computor1/Sample.cpp > CMakeFiles/Computor1.dir/Sample.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mipham/Documents/computorV1/Sample.cpp > CMakeFiles/Computor1.dir/Sample.cpp.i
 
 CMakeFiles/Computor1.dir/Sample.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Computor1.dir/Sample.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pelluro/Documents/Work/Computor1/Sample.cpp -o CMakeFiles/Computor1.dir/Sample.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mipham/Documents/computorV1/Sample.cpp -o CMakeFiles/Computor1.dir/Sample.cpp.s
 
 # Object files for target Computor1
 Computor1_OBJECTS = \
@@ -110,7 +110,7 @@ Computor1: CMakeFiles/Computor1.dir/test.cpp.o
 Computor1: CMakeFiles/Computor1.dir/Sample.cpp.o
 Computor1: CMakeFiles/Computor1.dir/build.make
 Computor1: CMakeFiles/Computor1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Computor1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mipham/Documents/computorV1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Computor1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Computor1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -123,6 +123,6 @@ CMakeFiles/Computor1.dir/clean:
 .PHONY : CMakeFiles/Computor1.dir/clean
 
 CMakeFiles/Computor1.dir/depend:
-	cd /home/pelluro/Documents/Work/Computor1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pelluro/Documents/Work/Computor1 /home/pelluro/Documents/Work/Computor1 /home/pelluro/Documents/Work/Computor1/cmake-build-debug /home/pelluro/Documents/Work/Computor1/cmake-build-debug /home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles/Computor1.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/mipham/Documents/computorV1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/mipham/Documents/computorV1 /Users/mipham/Documents/computorV1 /Users/mipham/Documents/computorV1/cmake-build-debug /Users/mipham/Documents/computorV1/cmake-build-debug /Users/mipham/Documents/computorV1/cmake-build-debug/CMakeFiles/Computor1.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Computor1.dir/depend
 

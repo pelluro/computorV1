@@ -1,9 +1,10 @@
 
-- Mon executable attend une entree valide
+1. Mon executable attend une entree : ok
+ Verifie si l'entree est valide ou pas
 
 
-- Detecter si un seul egal dans la fonction
-- Detecter le degre du polynome
+2. Detecter si un seul egal dans la fonction
+3. Detecter le degre du polynome
 - Split la fonction par + et -
 ex: 5x^2 + 3x + 1 = 3x^2 => donne 3 morceaux cote gauche et 1 du cote droite du egale.
 - Ensuite rassemble tout d'un seul cote.
@@ -17,3 +18,4 @@ ex: 5x^2 + 3x + 1 = 3x^2 => donne 3 morceaux cote gauche et 1 du cote droite du 
     -1.25
 `````
 
+    
