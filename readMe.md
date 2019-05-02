@@ -19,3 +19,6 @@ ex: 5x^2 + 3x + 1 = 3x^2 => donne 3 morceaux cote gauche et 1 du cote droite du 
 `````
 
     
+- a ne pas oublier:
+- nombre complexe
+- polynome de degre trois a reconnaitre

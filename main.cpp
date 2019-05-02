@@ -1,27 +1,30 @@
-#include "Sample.h"
+//
+// Created by pelluro on 29/04/19.
+//
+
 #include <iostream>
-using namespace std;
+#include "Polynome.h"
 
-int main(){
+using namespace std; /* std est un namespace special */
 
-    Sample i(42,2.4f,'s',3.14f);
-    //je definie une variable i de type Sample, donc  i  est une instance de la class Sample
-    // cette ligne permet d'appeler et executer le code dans le constructeur
-    // Sample est constance, i est dynamique
-    //i.a = 32;
-    //std::cout << i.toto << std::endl;
-    i.a = 32;
-    std::cout << i.a << std::endl;
-    i.funtion_inside_class();
-    i.setFoo(782);
-    std::cout << "instance get foo: " << i.getFoo() << std::endl;
-    i.setFoo(-5);
-    std::cout <<"instance get foo: " << i.getFoo() << std::endl;
+int main() {
+
+    char* buff;
+/*je redirige tout dans la sortie standard avev le double chevron */
 
 
+    cout << "Hello! " << endl; /*jecris sur la sortie standard (count), puis j'ajoute le saut de la ligne (endl) */
+    cout << "please enter a polynome : ";
+    //getline(cin, buff); //getline doesn't need the std:: prefix here because C++ has ADL(argument-dependent lookup).
+    std:: cin >> buff; /*cin est mon objet de l'entree standard aue je redirige vers mon buff */
+    if (buff == nullptr) {
+        cerr << "error input";
+    } else {
+        cout << "you entered : [" << buff << "]" << endl;
+        Polynome poly( buff);
 
-    
+        poly.getRacines();
+    }
     return 0;
-
 }
 

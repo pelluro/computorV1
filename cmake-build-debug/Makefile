@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/mipham/Documents/computorV1
+CMAKE_SOURCE_DIR = /home/pelluro/Documents/Work/Computor1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/mipham/Documents/computorV1/cmake-build-debug
+CMAKE_BINARY_DIR = /home/pelluro/Documents/Work/Computor1/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/mipham/Documents/computorV1/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mipham/Documents/computorV1/cmake-build-debug/CMakeFiles /Users/mipham/Documents/computorV1/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles /home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mipham/Documents/computorV1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,32 +123,194 @@ Computor1/fast:
 	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/build
 .PHONY : Computor1/fast
 
-Sample.o: Sample.cpp.o
+Monome.o: Monome.cpp.o
 
-.PHONY : Sample.o
+.PHONY : Monome.o
 
 # target to build an object file
-Sample.cpp.o:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Sample.cpp.o
-.PHONY : Sample.cpp.o
+Monome.cpp.o:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Monome.cpp.o
+.PHONY : Monome.cpp.o
 
-Sample.i: Sample.cpp.i
+Monome.i: Monome.cpp.i
 
-.PHONY : Sample.i
+.PHONY : Monome.i
 
 # target to preprocess a source file
-Sample.cpp.i:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Sample.cpp.i
-.PHONY : Sample.cpp.i
+Monome.cpp.i:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Monome.cpp.i
+.PHONY : Monome.cpp.i
 
-Sample.s: Sample.cpp.s
+Monome.s: Monome.cpp.s
 
-.PHONY : Sample.s
+.PHONY : Monome.s
 
 # target to generate assembly for a file
-Sample.cpp.s:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Sample.cpp.s
-.PHONY : Sample.cpp.s
+Monome.cpp.s:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Monome.cpp.s
+.PHONY : Monome.cpp.s
+
+Polynome.o: Polynome.cpp.o
+
+.PHONY : Polynome.o
+
+# target to build an object file
+Polynome.cpp.o:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Polynome.cpp.o
+.PHONY : Polynome.cpp.o
+
+Polynome.i: Polynome.cpp.i
+
+.PHONY : Polynome.i
+
+# target to preprocess a source file
+Polynome.cpp.i:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Polynome.cpp.i
+.PHONY : Polynome.cpp.i
+
+Polynome.s: Polynome.cpp.s
+
+.PHONY : Polynome.s
+
+# target to generate assembly for a file
+Polynome.cpp.s:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Polynome.cpp.s
+.PHONY : Polynome.cpp.s
+
+ft_sqrt.o: ft_sqrt.cpp.o
+
+.PHONY : ft_sqrt.o
+
+# target to build an object file
+ft_sqrt.cpp.o:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_sqrt.cpp.o
+.PHONY : ft_sqrt.cpp.o
+
+ft_sqrt.i: ft_sqrt.cpp.i
+
+.PHONY : ft_sqrt.i
+
+# target to preprocess a source file
+ft_sqrt.cpp.i:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_sqrt.cpp.i
+.PHONY : ft_sqrt.cpp.i
+
+ft_sqrt.s: ft_sqrt.cpp.s
+
+.PHONY : ft_sqrt.s
+
+# target to generate assembly for a file
+ft_sqrt.cpp.s:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_sqrt.cpp.s
+.PHONY : ft_sqrt.cpp.s
+
+ft_strcpy.o: ft_strcpy.cpp.o
+
+.PHONY : ft_strcpy.o
+
+# target to build an object file
+ft_strcpy.cpp.o:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_strcpy.cpp.o
+.PHONY : ft_strcpy.cpp.o
+
+ft_strcpy.i: ft_strcpy.cpp.i
+
+.PHONY : ft_strcpy.i
+
+# target to preprocess a source file
+ft_strcpy.cpp.i:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_strcpy.cpp.i
+.PHONY : ft_strcpy.cpp.i
+
+ft_strcpy.s: ft_strcpy.cpp.s
+
+.PHONY : ft_strcpy.s
+
+# target to generate assembly for a file
+ft_strcpy.cpp.s:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_strcpy.cpp.s
+.PHONY : ft_strcpy.cpp.s
+
+ft_strsplit.o: ft_strsplit.cpp.o
+
+.PHONY : ft_strsplit.o
+
+# target to build an object file
+ft_strsplit.cpp.o:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_strsplit.cpp.o
+.PHONY : ft_strsplit.cpp.o
+
+ft_strsplit.i: ft_strsplit.cpp.i
+
+.PHONY : ft_strsplit.i
+
+# target to preprocess a source file
+ft_strsplit.cpp.i:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_strsplit.cpp.i
+.PHONY : ft_strsplit.cpp.i
+
+ft_strsplit.s: ft_strsplit.cpp.s
+
+.PHONY : ft_strsplit.s
+
+# target to generate assembly for a file
+ft_strsplit.cpp.s:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_strsplit.cpp.s
+.PHONY : ft_strsplit.cpp.s
+
+ft_strtrim.o: ft_strtrim.cpp.o
+
+.PHONY : ft_strtrim.o
+
+# target to build an object file
+ft_strtrim.cpp.o:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_strtrim.cpp.o
+.PHONY : ft_strtrim.cpp.o
+
+ft_strtrim.i: ft_strtrim.cpp.i
+
+.PHONY : ft_strtrim.i
+
+# target to preprocess a source file
+ft_strtrim.cpp.i:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_strtrim.cpp.i
+.PHONY : ft_strtrim.cpp.i
+
+ft_strtrim.s: ft_strtrim.cpp.s
+
+.PHONY : ft_strtrim.s
+
+# target to generate assembly for a file
+ft_strtrim.cpp.s:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_strtrim.cpp.s
+.PHONY : ft_strtrim.cpp.s
+
+functions.o: functions.cpp.o
+
+.PHONY : functions.o
+
+# target to build an object file
+functions.cpp.o:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/functions.cpp.o
+.PHONY : functions.cpp.o
+
+functions.i: functions.cpp.i
+
+.PHONY : functions.i
+
+# target to preprocess a source file
+functions.cpp.i:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/functions.cpp.i
+.PHONY : functions.cpp.i
+
+functions.s: functions.cpp.s
+
+.PHONY : functions.s
+
+# target to generate assembly for a file
+functions.cpp.s:
+	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/functions.cpp.s
+.PHONY : functions.cpp.s
 
 main.o: main.cpp.o
 
@@ -177,33 +339,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-test.o: test.cpp.o
-
-.PHONY : test.o
-
-# target to build an object file
-test.cpp.o:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/test.cpp.o
-.PHONY : test.cpp.o
-
-test.i: test.cpp.i
-
-.PHONY : test.i
-
-# target to preprocess a source file
-test.cpp.i:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/test.cpp.i
-.PHONY : test.cpp.i
-
-test.s: test.cpp.s
-
-.PHONY : test.s
-
-# target to generate assembly for a file
-test.cpp.s:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/test.cpp.s
-.PHONY : test.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -211,17 +346,32 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... Computor1"
-	@echo "... Sample.o"
-	@echo "... Sample.i"
-	@echo "... Sample.s"
+	@echo "... edit_cache"
+	@echo "... Monome.o"
+	@echo "... Monome.i"
+	@echo "... Monome.s"
+	@echo "... Polynome.o"
+	@echo "... Polynome.i"
+	@echo "... Polynome.s"
+	@echo "... ft_sqrt.o"
+	@echo "... ft_sqrt.i"
+	@echo "... ft_sqrt.s"
+	@echo "... ft_strcpy.o"
+	@echo "... ft_strcpy.i"
+	@echo "... ft_strcpy.s"
+	@echo "... ft_strsplit.o"
+	@echo "... ft_strsplit.i"
+	@echo "... ft_strsplit.s"
+	@echo "... ft_strtrim.o"
+	@echo "... ft_strtrim.i"
+	@echo "... ft_strtrim.s"
+	@echo "... functions.o"
+	@echo "... functions.i"
+	@echo "... functions.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
 .PHONY : help
 
 
