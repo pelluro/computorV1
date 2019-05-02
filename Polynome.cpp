@@ -3,9 +3,7 @@
 //
 
 #include "Polynome.h"
-#include <iostream>
 #include "functions.h"
-
 
 using namespace std;
 
@@ -120,19 +118,16 @@ int Polynome:: countMinus(char *str) {
 Polynome ::Polynome(string str) {
 
     string s;
-    char * str1;
-    char * leftEquation;
-    char * rightEquation;
+    string leftEquation;
+    string rightEquation;
     char **leftMonomes;
     char **rightMonomes;
 
+    str.erase(remove(str.begin(), str.end(), ' '), str.end());
+    vector<string> x = split(str, '=');
 
-    str1 = ft_strtrim(str);
-
-    s = ft_strsplit(str1, '=');
-
-    leftEquation = this->addPlusBeforeMinus(s[0]);
-    rightEquation = this->addPlusBeforeMinus(s[1]);
+    leftEquation = x[0];
+    rightEquation = x[1];
 
     leftMonomes = ft_strsplit(leftEquation, '+');
     rightMonomes = ft_strsplit(rightEquation, '+');
@@ -179,5 +174,4 @@ Polynome ::Polynome(string str) {
         j++;
     }
 }
-
 
