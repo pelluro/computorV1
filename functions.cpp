@@ -57,7 +57,7 @@ char **ft_strsplit(char *s, char c)
 }
 
 
-char *ft_strsub(char *s, unsigned int start, size_t len)
+char *ft_strsub(char *s, int start, size_t len)
 {
     size_t	i;
     char	*dest;

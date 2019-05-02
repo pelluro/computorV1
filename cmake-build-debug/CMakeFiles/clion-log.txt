@@ -1,4 +1,16 @@
 /home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/pelluro/Documents/Work/Computor1
 -- Configuring done
--- Generating done
+CMake Error at CMakeLists.txt:6 (add_executable):
+  Cannot find source file:
+
+    ft_sqrt.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
+
+
+CMake Error at CMakeLists.txt:6 (add_executable):
+  No SOURCES given to target: Computor1
+
+
 -- Build files have been written to: /home/pelluro/Documents/Work/Computor1/cmake-build-debug

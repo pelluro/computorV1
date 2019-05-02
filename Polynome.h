@@ -6,14 +6,15 @@
 #define POLYNOME_H
 
 #include "Monome.h"
-
+#include <string>
+using namespace std;
 
 class Polynome {
 
 public:
     Monome * tabMonomes = nullptr;
 
-    Polynome(char* str);
+    Polynome(string str);
 
     int getMaxDegree ( void );
     void refactor ( void );

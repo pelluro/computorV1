@@ -47,6 +47,7 @@ void Polynome:: refactor ( void ){
 
 
 float Polynome:: getDiscriminant ( void ){
+    cout << "je rentre dans getDiscriminant" << endl;
 
     int degreeMax = this->getMaxDegree();
     if (degreeMax != 2) {
@@ -59,6 +60,7 @@ float Polynome:: getDiscriminant ( void ){
 
 
 float* Polynome:: getRacines ( void ){
+    cout << "je rentre dans getRacines" << endl;
     float discriminant = this->getDiscriminant();
     float *tabRacine;
     if ( discriminant < 0)
@@ -115,9 +117,9 @@ int Polynome:: countMinus(char *str) {
 
 //rechecke les protection de malloc pour eviter le crash toussa toussa
 
-Polynome ::Polynome(char *str) {
+Polynome ::Polynome(string str) {
 
-    char **s;
+    string s;
     char * str1;
     char * leftEquation;
     char * rightEquation;
