@@ -81,12 +81,12 @@ float* Polynome:: getRacines ( void ){
     }
 }
 
-char* Polynome::addPlusBeforeMinus(char* str){
+char* Polynome::addPlusBeforeMinus(string str){
 
     int i = 0;
     int j = 0 ;
     int minus = this->countMinus(str);
-    char *strNew = (char*) malloc(sizeof(char)*(ft_strlen(str) + minus + 1));
+    char *strNew = (char*) malloc(sizeof(char)*(str.length() + minus + 1));
 
     while (str[i])
     {
@@ -103,7 +103,7 @@ char* Polynome::addPlusBeforeMinus(char* str){
     return strNew;
 }
 
-int Polynome:: countMinus(char *str) {
+int Polynome:: countMinus(string str) {
     int i = 0;
     int minus = 0;
     while (str[i]){
@@ -120,17 +120,17 @@ Polynome ::Polynome(string str) {
     string s;
     string leftEquation;
     string rightEquation;
-    char **leftMonomes;
-    char **rightMonomes;
+    vector<string> leftMonomes;
+    vector<string> rightMonomes;
 
     str.erase(remove(str.begin(), str.end(), ' '), str.end());
     vector<string> x = split(str, '=');
 
-    leftEquation = x[0];
-    rightEquation = x[1];
-
-    leftMonomes = ft_strsplit(leftEquation, '+');
-    rightMonomes = ft_strsplit(rightEquation, '+');
+    leftEquation = this->addPlusBeforeMinus(x[0]);
+    rightEquation = this->addPlusBeforeMinus(x[1]);
+	// add plus when find minus
+    leftMonomes = split(leftEquation, '+');
+    rightMonomes = split(rightEquation, '+');
     int i = 0;
     while(leftMonomes[i])
     {
