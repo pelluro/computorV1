@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pelluro/Documents/Work/Computor1
+CMAKE_SOURCE_DIR = /Users/mipham/Documents/computorV1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pelluro/Documents/Work/Computor1/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/mipham/Documents/computorV1/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/pelluro/Documents/Work/Computor1/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles /home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mipham/Documents/computorV1/cmake-build-debug/CMakeFiles /Users/mipham/Documents/computorV1/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mipham/Documents/computorV1/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -177,114 +177,6 @@ Polynome.cpp.s:
 	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Polynome.cpp.s
 .PHONY : Polynome.cpp.s
 
-ft_sqrt.o: ft_sqrt.cpp.o
-
-.PHONY : ft_sqrt.o
-
-# target to build an object file
-ft_sqrt.cpp.o:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_sqrt.cpp.o
-.PHONY : ft_sqrt.cpp.o
-
-ft_sqrt.i: ft_sqrt.cpp.i
-
-.PHONY : ft_sqrt.i
-
-# target to preprocess a source file
-ft_sqrt.cpp.i:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_sqrt.cpp.i
-.PHONY : ft_sqrt.cpp.i
-
-ft_sqrt.s: ft_sqrt.cpp.s
-
-.PHONY : ft_sqrt.s
-
-# target to generate assembly for a file
-ft_sqrt.cpp.s:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_sqrt.cpp.s
-.PHONY : ft_sqrt.cpp.s
-
-ft_strcpy.o: ft_strcpy.cpp.o
-
-.PHONY : ft_strcpy.o
-
-# target to build an object file
-ft_strcpy.cpp.o:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_strcpy.cpp.o
-.PHONY : ft_strcpy.cpp.o
-
-ft_strcpy.i: ft_strcpy.cpp.i
-
-.PHONY : ft_strcpy.i
-
-# target to preprocess a source file
-ft_strcpy.cpp.i:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_strcpy.cpp.i
-.PHONY : ft_strcpy.cpp.i
-
-ft_strcpy.s: ft_strcpy.cpp.s
-
-.PHONY : ft_strcpy.s
-
-# target to generate assembly for a file
-ft_strcpy.cpp.s:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_strcpy.cpp.s
-.PHONY : ft_strcpy.cpp.s
-
-ft_strsplit.o: ft_strsplit.cpp.o
-
-.PHONY : ft_strsplit.o
-
-# target to build an object file
-ft_strsplit.cpp.o:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_strsplit.cpp.o
-.PHONY : ft_strsplit.cpp.o
-
-ft_strsplit.i: ft_strsplit.cpp.i
-
-.PHONY : ft_strsplit.i
-
-# target to preprocess a source file
-ft_strsplit.cpp.i:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_strsplit.cpp.i
-.PHONY : ft_strsplit.cpp.i
-
-ft_strsplit.s: ft_strsplit.cpp.s
-
-.PHONY : ft_strsplit.s
-
-# target to generate assembly for a file
-ft_strsplit.cpp.s:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_strsplit.cpp.s
-.PHONY : ft_strsplit.cpp.s
-
-ft_strtrim.o: ft_strtrim.cpp.o
-
-.PHONY : ft_strtrim.o
-
-# target to build an object file
-ft_strtrim.cpp.o:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_strtrim.cpp.o
-.PHONY : ft_strtrim.cpp.o
-
-ft_strtrim.i: ft_strtrim.cpp.i
-
-.PHONY : ft_strtrim.i
-
-# target to preprocess a source file
-ft_strtrim.cpp.i:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_strtrim.cpp.i
-.PHONY : ft_strtrim.cpp.i
-
-ft_strtrim.s: ft_strtrim.cpp.s
-
-.PHONY : ft_strtrim.s
-
-# target to generate assembly for a file
-ft_strtrim.cpp.s:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/ft_strtrim.cpp.s
-.PHONY : ft_strtrim.cpp.s
-
 functions.o: functions.cpp.o
 
 .PHONY : functions.o
@@ -346,26 +238,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... Computor1"
 	@echo "... edit_cache"
+	@echo "... Computor1"
 	@echo "... Monome.o"
 	@echo "... Monome.i"
 	@echo "... Monome.s"
 	@echo "... Polynome.o"
 	@echo "... Polynome.i"
 	@echo "... Polynome.s"
-	@echo "... ft_sqrt.o"
-	@echo "... ft_sqrt.i"
-	@echo "... ft_sqrt.s"
-	@echo "... ft_strcpy.o"
-	@echo "... ft_strcpy.i"
-	@echo "... ft_strcpy.s"
-	@echo "... ft_strsplit.o"
-	@echo "... ft_strsplit.i"
-	@echo "... ft_strsplit.s"
-	@echo "... ft_strtrim.o"
-	@echo "... ft_strtrim.i"
-	@echo "... ft_strtrim.s"
 	@echo "... functions.o"
 	@echo "... functions.i"
 	@echo "... functions.s"

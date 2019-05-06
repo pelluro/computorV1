@@ -24,6 +24,7 @@ public:
 private:
     string addPlusBeforeMinus(string str);
     int countMinus(string str);
+
 };
 
 

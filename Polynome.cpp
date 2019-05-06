@@ -83,10 +83,12 @@ float* Polynome:: getRacines ( void ){
 
 string Polynome::addPlusBeforeMinus(string str){
 
+
     int i = 0;
     int j = 0 ;
     int minus = this->countMinus(str);
     char *strNew = (char*) malloc(sizeof(char)*(str.size() + minus + 1));
+
 
     while (str[i])
     {
