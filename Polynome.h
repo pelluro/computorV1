@@ -7,12 +7,14 @@
 
 #include "Monome.h"
 #include <string>
+#include <vector>
+
 using namespace std;
 
 class Polynome {
 
 public:
-    Monome * tabMonomes = nullptr;
+    vector<Monome> tabMonomes;
 
     Polynome(string str);
 

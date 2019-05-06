@@ -15,7 +15,6 @@
 using namespace std;
 
 int     ft_sqrt(int i);
+vector<string>	ft_strsplit(string s, char c);
 
-template <class Container>
-void split(const string& str, Container& cont, char delim);
 #endif

@@ -17,9 +17,9 @@ int main() {
 
     cout << "Hello! " << endl; /*jecris sur la sortie standard (count), puis j'ajoute le saut de la ligne (endl) */
     cout << "please enter a polynome : ";
-    //getline(cin, buff); //getline doesn't need the std:: prefix here because C++ has ADL(argument-dependent lookup).
-    cin >> buff; /*cin est mon objet de l'entree standard aue je redirige vers mon buff */
-
+    getline(cin, buff); //getline doesn't need the std:: prefix here because C++ has ADL(argument-dependent lookup).
+//    cin >> buff; /*cin est mon objet de l'entree standard aue je redirige vers mon buff */
+//
     if (buff == "") {
         cerr << "error input";
     } else {

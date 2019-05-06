@@ -3,18 +3,8 @@
 //
 
 #include "functions.h"
-
+#include <string>
 using namespace std;
-
-template <class Container>
-void split(const string& str, Container& cont, char delim)
-{
-    stringstream ss(str);
-    string token;
-    while (getline(ss, token, delim)) {
-        cont.push_back(token);
-    }
-}
 
 
 int	ft_sqrt(int nb)
@@ -35,40 +25,14 @@ int	ft_sqrt(int nb)
     return (0);
 }
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+vector<string>	ft_strsplit(string s, char c)
 {
-    size_t	i;
-    char	*dest;
-
-    i = 0;
-    if (!s)
-        return (NULL);
-    if (start > ft_strlen(s))
-        return (NULL);
-    if (!(dest = (char*)malloc(sizeof(char) * (len + 1))))
-        return (NULL);
-    while (i < len && s[start])
-    {
-        dest[i] = s[start];
-        start++;
-        i++;
-    }
-    dest[i] = '\0';
-    return (dest);
-}
-
-char	**ft_strsplit(const char *s, char c)
-{
-    char			**res;
+    vector<string>			res;
     unsigned int	i;
-    unsigned int	j;
     unsigned int	size;
 
     i = 0;
-    j = 0;
-    if (!s || !c ||
-        !(res = (char **)malloc(sizeof(char*) * (ft_strlen(s) + 1))))
-        return (NULL);
+    cout << "split de s = " << s << " avec le char '"<<c<<"'"<< endl;
     while (s[i])
     {
         if (s[i] == c)
@@ -78,10 +42,12 @@ char	**ft_strsplit(const char *s, char c)
             size = 0;
             while (s[i + size] && (s[i + size] != c))
                 size++;
-            res[j++] = ft_strsub(s, i, size);
+            string split = s.substr(i, size);
+            cout << "split de s en i = " << i << " et size = " << size << " donne : " << split << endl;
+            res.push_back(split);
             i = i + size;
         }
     }
-    res[j] = 0;
+    cout << "Creation d'un tableau de " << res.size() << " elements" << endl;
     return (res);
 }

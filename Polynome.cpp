@@ -9,37 +9,37 @@ using namespace std;
 
 
 int Polynome:: getMaxDegree ( void ){
-    if (this->tabMonomes == nullptr)
+    cout << "je rentre dans getMaxDegree" << endl;
+    if (this->tabMonomes.size() == 0)
         return 0;
+    int degreeMax = 0;
 
-    int i = 0;
-    int degree = 0;
-    Monome  *currentPointeur = &(this->tabMonomes[0]);
-    while ( currentPointeur != nullptr){
-        if (currentPointeur->degree > degree) {
-            degree = currentPointeur->degree;
-        }
-        i++;
-        currentPointeur = &(this->tabMonomes[i]);
+    for (int j = 0; j < this->tabMonomes.size(); j++) {
+        int degree = this->tabMonomes[j].degree;
+        if(degree>degreeMax)
+            degreeMax = degree;
     }
-
-    return degree;
+    return degreeMax;
 
 }
 
 
 void Polynome:: refactor ( void ){
+    cout << "je rentre dans refactor" <<endl;
     int i = 0;
     int degreeMax = this->getMaxDegree();
     Monome * newTab = (Monome*)malloc((degreeMax + 1) *sizeof(Monome));
-    Monome  *currentPointeur = &(this->tabMonomes[0]);
-    while ( currentPointeur != nullptr) {
-        newTab[currentPointeur->degree].coeff += currentPointeur->coeff;
-        newTab[currentPointeur->degree].degree = currentPointeur->degree;
-        i++;
-        currentPointeur = &(this->tabMonomes[i]);
+    for (int j = 0; j < this->tabMonomes.size(); j++) {
+        float coeff = this->tabMonomes[j].coeff;
+        int degree = this->tabMonomes[j].degree;
+
+        newTab[degree].coeff += coeff;
+        newTab[degree].degree = degree;
     }
-    this->tabMonomes = newTab;
+    this->tabMonomes.clear();
+    for (int j = 0; j <= degreeMax; j++) {
+        this->tabMonomes.push_back(newTab[j]);
+    }
 }
 
 
@@ -48,6 +48,9 @@ float Polynome:: getDiscriminant ( void ){
     cout << "je rentre dans getDiscriminant" << endl;
 
     int degreeMax = this->getMaxDegree();
+    cout << "degreeMax" << degreeMax<<endl;
+    cout << "je sors getMaxDegrees" << endl;
+
     if (degreeMax != 2) {
         throw std::invalid_argument(" degree of polynome has to be 2");
     }
@@ -83,10 +86,14 @@ float* Polynome:: getRacines ( void ){
 
 string Polynome::addPlusBeforeMinus(string str){
 
-
+    cout << "Add+Before- de '" << str << "'" << endl;
     int i = 0;
     int j = 0 ;
     int minus = this->countMinus(str);
+    cout << "Found " << minus << " - " << endl;
+    if(minus == 0)
+        return  str;
+
     char *strNew = (char*) malloc(sizeof(char)*(str.size() + minus + 1));
 
 
@@ -111,6 +118,7 @@ int Polynome:: countMinus(string str) {
     while (str[i]){
         if (str[i] == '-')
             minus++;
+        i++;
     }
     return minus;
 }
@@ -122,40 +130,41 @@ Polynome ::Polynome(string str) {
     string s;
     string leftEquation;
     string rightEquation;
-
+    cout << "je suis dans polynome" <<endl;
     str.erase(remove(str.begin(), str.end(), ' '), str.end());
-    vector<string> x;
-    split(str, x, '=');
-
+    cout << "my str is " << str <<endl;
+    vector<string> x ;
+    x = ft_strsplit(str, '=');
+    cout << "x[0] = " << x[0] <<endl;
+    cout << "x[1] = " << x[1] <<endl;
     leftEquation = addPlusBeforeMinus(x[0]);
     rightEquation = addPlusBeforeMinus(x[1]);
 
     vector<string> leftMonomes;
     vector<string> rightMonomes;
-    split(leftEquation,  leftMonomes,'+');
-    split(rightEquation, rightMonomes, '+');
-    ulong leftSize = leftEquation.size();
-    ulong rightSize = rightEquation.size();
+    leftMonomes = ft_strsplit(leftEquation,'+');
+    rightMonomes = ft_strsplit(rightEquation, '+');
+    ulong leftSize = leftMonomes.size();
+    ulong rightSize = rightMonomes.size();
 
-    Monome* leftTabMonomes = (Monome*)malloc(sizeof(Monome)*leftSize);
-    Monome* rightTabMonomes = (Monome*)malloc(sizeof(Monome)*rightSize);
+    cout << "Lecture des monomes de gauche (" << leftSize << ") elements" << endl;
+    this->tabMonomes.clear();
     for (int i = 0; i < leftSize; i++) {
-        Monome m(leftMonomes[i]);
-        leftTabMonomes[i] = m;
+        string s = leftMonomes[i];
+        cout << "Conversion de '" << s << "' en monome" << endl;
+        Monome m(s);
+        this->tabMonomes.push_back(m);
     }
 
-    for (int i = 0; i < rightSize; i++) {
-        Monome m(rightMonomes[i]);
-        rightTabMonomes[i] = m;
-        rightTabMonomes[i].coeff *= -1;
+    cout << "Lecture des monomes de droite(" << rightSize<< ") elements" << endl;
+    for (int i = 0; i < rightSize - 1; i++) {
+        string s = rightMonomes[i];
+        cout << "Conversion de '" << s << "' en monome" << endl;
+        Monome m(s);
+        m.coeff *= -1;
+        this->tabMonomes.push_back(m);
     }
-    this->tabMonomes= (Monome*)malloc(sizeof(Monome)*(leftSize + rightSize));
-    for (int i = 0; i < leftSize+rightSize; i++) {
-        if (i < leftSize) {
-            this->tabMonomes[i] = leftTabMonomes[i];
-        } else {
-            this->tabMonomes[i] = rightTabMonomes[i - leftSize];
-        }
-    }
+    cout << "je sors de polynome" <<endl;
+
 }
 
