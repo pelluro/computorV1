@@ -22,9 +22,8 @@ public:
     float* getRacines ( void );
 
 private:
-    char* addPlusBeforeMinus(char* str);
-    int countMinus(char * str);
-    Monome* parseString(char* str);
+    string addPlusBeforeMinus(string str);
+    int countMinus(string str);
 };
 
 

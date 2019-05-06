@@ -4,7 +4,8 @@
 
 #ifndef MONOME_H
 #define MONOME_H
-
+#include <string>
+using namespace std;
 
 class Monome {
 
@@ -12,11 +13,9 @@ public:
     float coeff;
     int degree;
 
-    Monome(float coeff, int degree);
-    
-    Monome(char *s);
+    Monome(string s);
 
 };
 
 
-#endif //COMPUTOR1_MONOME_H
+#endif

@@ -81,20 +81,20 @@ float* Polynome:: getRacines ( void ){
     }
 }
 
-char* Polynome::addPlusBeforeMinus(char* str){
+string Polynome::addPlusBeforeMinus(string str){
 
     int i = 0;
     int j = 0 ;
     int minus = this->countMinus(str);
-    char *strNew = (char*) malloc(sizeof(char)*(ft_strlen(str) + minus + 1));
+    char *strNew = (char*) malloc(sizeof(char)*(str.size() + minus + 1));
 
     while (str[i])
     {
         if (str[i] == '-'){
             strNew[j] = '+';
             j++;
-
         }
+
         strNew[j] = str[i];
         i++;
         j++;
@@ -103,7 +103,7 @@ char* Polynome::addPlusBeforeMinus(char* str){
     return strNew;
 }
 
-int Polynome:: countMinus(char *str) {
+int Polynome:: countMinus(string str) {
     int i = 0;
     int minus = 0;
     while (str[i]){
@@ -120,58 +120,40 @@ Polynome ::Polynome(string str) {
     string s;
     string leftEquation;
     string rightEquation;
-    char **leftMonomes;
-    char **rightMonomes;
 
     str.erase(remove(str.begin(), str.end(), ' '), str.end());
-    vector<string> x = split(str, '=');
+    vector<string> x;
+    split(str, x, '=');
 
-    leftEquation = x[0];
-    rightEquation = x[1];
+    leftEquation = addPlusBeforeMinus(x[0]);
+    rightEquation = addPlusBeforeMinus(x[1]);
 
-    leftMonomes = ft_strsplit(leftEquation, '+');
-    rightMonomes = ft_strsplit(rightEquation, '+');
-    int i = 0;
-    while(leftMonomes[i])
-    {
-        i++;
-    }
-    Monome* leftTabMonomes = (Monome*)malloc(sizeof(Monome)*i);
-    i = 0;
-    while(leftMonomes[i])
-    {
+    vector<string> leftMonomes;
+    vector<string> rightMonomes;
+    split(leftEquation,  leftMonomes,'+');
+    split(rightEquation, rightMonomes, '+');
+    ulong leftSize = leftEquation.size();
+    ulong rightSize = rightEquation.size();
+
+    Monome* leftTabMonomes = (Monome*)malloc(sizeof(Monome)*leftSize);
+    Monome* rightTabMonomes = (Monome*)malloc(sizeof(Monome)*rightSize);
+    for (int i = 0; i < leftSize; i++) {
         Monome m(leftMonomes[i]);
         leftTabMonomes[i] = m;
-        i++;
     }
 
-    int j = 0;
-    while(rightMonomes[j])
-    {
-        j++;
+    for (int i = 0; i < rightSize; i++) {
+        Monome m(rightMonomes[i]);
+        rightTabMonomes[i] = m;
+        rightTabMonomes[i].coeff *= -1;
     }
-    Monome* rightTabMonomes = (Monome*)malloc(sizeof(Monome)*j);
-    j = 0;
-    while(rightMonomes[j])
-    {
-        Monome m(rightMonomes[j]);
-        rightTabMonomes[j] = m;
-        rightTabMonomes[j].coeff *= -1;
-        j++;
-    }
-    int k = i + j;
-    this->tabMonomes= (Monome*)malloc(sizeof(Monome)*(k));
-    i = 0;
-    while(i < k - j)
-    {
-        this->tabMonomes[i] = leftTabMonomes[i];
-        i++;
-    }
-    j=0;
-    while(j < k - i)
-    {
-        this->tabMonomes[j] = rightTabMonomes[j];
-        j++;
+    this->tabMonomes= (Monome*)malloc(sizeof(Monome)*(leftSize + rightSize));
+    for (int i = 0; i < leftSize+rightSize; i++) {
+        if (i < leftSize) {
+            this->tabMonomes[i] = leftTabMonomes[i];
+        } else {
+            this->tabMonomes[i] = rightTabMonomes[i - leftSize];
+        }
     }
 }
 
