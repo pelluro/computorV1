@@ -5,7 +5,7 @@
 
 1. Mon executable attend une entree
 	*	String
-	*	Si c'est un polynome valide (format ax^n +bx^n-1 = 0)
+	*	Si c'est un polynome valide (format a * x^n +b * x^n-1 = 0)
 	*	Exclure si pas '=' dans la string
 	*	Si le degree est <= 2	 
 2. Traitement le string:
@@ -14,7 +14,8 @@
 	*	Ajouter le + avant chaque -
 	*	Split la fonction par +
 	*	Rassembler tout d'un seul cote
-	*	Detecter le degre du polynome et afficher 
+	*	Detecter le degre du polynome et afficher
+
 			
 3. Resoudre le polynome:
 	*	Calculer discriminant 
@@ -24,7 +25,8 @@
 4. A ne pas oublier:
 	*	Nombre complexe racine irrelle
 	*	Polynome de degre trois a reconnaitre
-
+	*	Cas special a gerer 42 ∗ X0 = 42 ∗ X0
+	
 5. Exemple de l'executable:
 ````
 ./computor "5 + 4 * X + X^2= X^2"   

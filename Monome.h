@@ -14,7 +14,9 @@ public:
     int degree;
 
     Monome(string s);
+
     void print(void);
+//	~Monome( void );
 };
 
 

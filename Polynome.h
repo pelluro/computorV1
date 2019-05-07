@@ -18,14 +18,15 @@ public:
 
     Polynome(string str);
 
+
     int getMaxDegree ( void );
     void refactor ( void );
     float getDiscriminant ( void );
-    float* getRacines ( void );
+    vector<float> getRacines ( void );
 
-private:
     string addPlusBeforeMinus(string str);
     int countMinus(string str);
+//	~Polynome( void );
 
 };
 
