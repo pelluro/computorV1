@@ -6,19 +6,19 @@
 1. Mon executable attend une entree
 	*	String
 	*	Si c'est un polynome valide (format ax^n +bx^n-1 = 0)
-			2. Exclure si pas '=' dans la string
-			1. si le degree est <= 2	 
+	*	Exclure si pas '=' dans la string
+	*	Si le degree est <= 2	 
 2. Traitement le string:
 	*	spliter en fonction du '='	
 	*	reecrire en reduce form et afficher
-			2. Ajouter le + avant chaque -
-			1. Split la fonction par +
-			3. Rassembler tout d'un seul cote
+	*	Ajouter le + avant chaque -
+	*	Split la fonction par +
+	*	Rassembler tout d'un seul cote
 	*	Detecter le degre du polynome et afficher 
 			
 3. Resoudre le polynome:
-	*	Calculer discriminant
-			*	discriminant = 0 > 0 < 0
+	*	Calculer discriminant 
+	*	Cas special ou discriminant = 0 > 0 < 0
 	*	Calculer racine
 		
 4. A ne pas oublier:
