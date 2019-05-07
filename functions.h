@@ -11,6 +11,8 @@
 #include <algorithm>
 #include <string>
 #include <sstream>
+#include "Monome.h"
+#include "Polynome.h"
 
 using namespace std;
 

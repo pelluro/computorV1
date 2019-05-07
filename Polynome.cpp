@@ -144,8 +144,8 @@ Polynome ::Polynome(string str) {
     vector<string> rightMonomes;
     leftMonomes = ft_strsplit(leftEquation,'+');
     rightMonomes = ft_strsplit(rightEquation, '+');
-    ulong leftSize = leftMonomes.size();
-    ulong rightSize = rightMonomes.size();
+    int leftSize = leftMonomes.size();
+    int rightSize = rightMonomes.size();
 
     cout << "Lecture des monomes de gauche (" << leftSize << ") elements" << endl;
     this->tabMonomes.clear();
