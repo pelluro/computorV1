@@ -33,6 +33,12 @@ Monome::Monome(string s) {
     }
 }
 
+Monome::Monome(float coeff, int degree)
+{
+    this->degree = degree;
+    this->coeff = coeff;
+}
+
 void Monome::print(void) {
     cout <<"degree est " << this->degree << endl;
     cout <<"coeff est " << this->coeff << endl;

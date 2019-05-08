@@ -15,11 +15,11 @@ class Polynome {
 
 public:
     vector<Monome> tabMonomes;
+    int degreeMax;
 
     Polynome(string str);
 
 
-    int getMaxDegree ( void );
     void refactor ( void );
     float getDiscriminant ( void );
     vector<float> getRacines ( void );
@@ -28,6 +28,8 @@ public:
     int countMinus(string str);
 //	~Polynome( void );
 
+private:
+    int getMaxDegree ( void );
 };
 
 

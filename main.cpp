@@ -30,7 +30,10 @@ int main() {
     else {
         cout << "you entered : [" << buff << "]" << endl;
         Polynome* poly = new Polynome( buff);
-        poly->getRacines();
+        vector<float> racines = poly->getRacines();
+        for (int i = 0; i < racines.size(); i++) {
+            cout << "Racine " << i << " = " << racines[i] << endl;
+        }
 		delete(poly);
 	}
     return 0;

@@ -19,6 +19,7 @@ int Polynome:: getMaxDegree ( void ){
         if(degree>degreeMax)
             degreeMax = degree;
     }
+    cout << "Degree max = " << degreeMax << endl;
     return degreeMax;
 
 }
@@ -26,8 +27,11 @@ int Polynome:: getMaxDegree ( void ){
 
 void Polynome:: refactor ( void ){
     cout << "je rentre dans refactor" <<endl;
-    int degreeMax = this->getMaxDegree();
     vector<Monome> newTab;
+    for (int i = 0; i < this->degreeMax; ++i) {
+        Monome m(0,0);
+        newTab.push_back(m);
+    }
     for (int j = 0; j < this->tabMonomes.size(); j++) {
         float coeff = this->tabMonomes[j].coeff;
         int degree = this->tabMonomes[j].degree;
@@ -36,8 +40,14 @@ void Polynome:: refactor ( void ){
         newTab[degree].degree = degree;
     }
     this->tabMonomes.clear();
-    for (int j = 0; j <= degreeMax; j++) {
+    for (int j = 0; j <= this->degreeMax; j++) {
         this->tabMonomes.push_back(newTab[j]);
+    }
+    cout << "Refactor done :" << endl;
+    for (int k = 0; k < this->tabMonomes.size(); ++k) {
+        float c = this->tabMonomes[k].coeff;
+        int d = this->tabMonomes[k].degree;
+        cout << c << "*x^" << d << endl;
     }
 }
 
@@ -45,41 +55,48 @@ void Polynome:: refactor ( void ){
 
 float Polynome:: getDiscriminant ( void ){
     cout << "je rentre dans getDiscriminant" << endl;
-
-    int degreeMax = this->getMaxDegree();
-    cout << "degreeMax " << degreeMax<<endl;
-    cout << "je sors getMaxDegrees" << endl;
-
-    if (degreeMax != 2) {
+    if (this->degreeMax != 2) {
         cout << "The polynomial degree is stricly greater than 2, I can't solve." << endl;
-		EXIT_FAILURE;
+		exit(EXIT_FAILURE);
     }
     this->refactor();
-    float discriminant = this->tabMonomes[1].coeff * this->tabMonomes[1].coeff - 4 * this->tabMonomes[0].coeff * this->tabMonomes[2].coeff;
+    float a = this->tabMonomes[2].coeff;
+    float b = this->tabMonomes[1].coeff;
+    float c = this->tabMonomes[0].coeff;
+    float discriminant = (b  * b) - (4 * a * c);
     return discriminant;
 }
 
 
 vector<float> Polynome:: getRacines ( void ){
     cout << "je rentre dans getRacines" << endl;
-    float discriminant = this->getDiscriminant();
     vector<float> tabRacine;
-    if ( discriminant < 0)
-    {
-        cout << " polynome has racine irreel " << endl;
-        return tabRacine;
+
+    if(this->degreeMax == 2) {
+        float discriminant = this->getDiscriminant();
+        cout << "Discriminant = "<<discriminant<<endl;
+        if (discriminant < 0) {
+            cout << " polynome has racine irreel " << endl;
+        } else if (discriminant == 0) {
+            float b = this->tabMonomes[1].coeff;
+            float a = this->tabMonomes[2].coeff;
+            float r = (0 - b) / (2 * a);
+            cout << "r1 = r2 = " << r << endl;
+            tabRacine.push_back(r);
+        } else {
+            float b = this->tabMonomes[1].coeff;
+            float a = this->tabMonomes[2].coeff;
+            float delta = ft_sqrt(discriminant);
+            cout << "Delta = " << delta << endl;
+            float r1 = (0 - b - delta) / (2 * a);
+            float r2 = (0 - b + delta) / (2 * a);
+            cout << "r1 = " << r1 << endl;
+            cout << "r2 = " << r2 << endl;
+            tabRacine.push_back(r1);
+            tabRacine.push_back(r2);
+        }
     }
-    else if (discriminant == 0)
-    {
-        tabRacine[0]  = 0 - (this->tabMonomes[1].coeff / 2* this->tabMonomes[0].coeff);
-        return tabRacine;
-    }
-    else
-    {
-        tabRacine[0] = 0 -( ft_sqrt(discriminant) / 4 * 2* this->tabMonomes[0].coeff * 2* this->tabMonomes[2].coeff);
-        tabRacine[1] = -tabRacine[0];
-        return tabRacine;
-    }
+    return tabRacine;
 }
 
 string Polynome::addPlusBeforeMinus(string str){
@@ -95,12 +112,10 @@ string Polynome::addPlusBeforeMinus(string str){
     while (str[i])
     {
         if (str[i] == '-'){
-            strNew[j] = '+';
-            j++;
+            strNew += '+';
         }
-        strNew[j] = str[i];
+        strNew += str[i];
         i++;
-        j++;
     }
     return strNew;
 }
@@ -133,7 +148,8 @@ Polynome ::Polynome(string str) {
     cout << "x[1] = " << x[1] <<endl;
     leftEquation = addPlusBeforeMinus(x[0]);
     rightEquation = addPlusBeforeMinus(x[1]);
-
+    cout << leftEquation << endl;
+    cout << rightEquation << endl;
     vector<string> leftMonomes;
     vector<string> rightMonomes;
     leftMonomes = ft_strsplit(leftEquation,'+');
@@ -144,7 +160,7 @@ Polynome ::Polynome(string str) {
     cout << "Lecture des monomes de gauche (" << leftSize << ") elements" << endl;
     this->tabMonomes.clear();
     for (int i = 0; i < leftSize; i++) {
-        string s = leftMonomesx[i];
+        string s = leftMonomes[i];
         cout << "Conversion de '" << s << "' en monome" << endl;
         Monome m(s);
         this->tabMonomes.push_back(m);
@@ -159,6 +175,8 @@ Polynome ::Polynome(string str) {
         this->tabMonomes.push_back(m);
     }
 
+
+    this->degreeMax = this->getMaxDegree();
     // il manque une fonction pour arranger les coeff de meme degree
     cout << "je sors de polynome" <<endl;
 

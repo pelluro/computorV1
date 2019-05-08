@@ -16,7 +16,7 @@
 
 using namespace std;
 
-int     ft_sqrt(int i);
+float     ft_sqrt(int i);
 vector<string>	ft_strsplit(string s, char c);
 
 #endif

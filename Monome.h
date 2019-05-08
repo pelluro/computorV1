@@ -14,6 +14,7 @@ public:
     int degree;
 
     Monome(string s);
+    Monome(float coeff, int degree);
 
     void print(void);
 //	~Monome( void );
