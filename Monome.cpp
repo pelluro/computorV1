@@ -5,6 +5,7 @@
 #include "Monome.h"
 #include "functions.h"
 
+
 Monome::Monome(string s) {
     cout << "Creation monome a partir de '" << s << "'" << endl;
     vector<string> arr;
