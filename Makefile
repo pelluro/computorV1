@@ -13,16 +13,17 @@
 
 NAME = computor
 
-_GREEN = $'\x1b[32m
-_CYAN = $'\x1b[36m
-_RED = $'\x1b[31m
-_YELLOW = $'\x1b[33m
-_PURPLE = $'\x1b[35m
-_BLUE = $'\x1b[34m
+_GREEN = \033[32m
+_CYAN = \033[36m
+_RED = \033[31m
+_YELLOW = \033[33m
+_PURPLE = \033[35m
+_BLUE = \033[34m
 
+# la norme c+11 et c+98 sont pas pareil
 
 CXX := clang++
-CXXFLAGS := -std=c++98
+CXXFLAGS := -std=c++11
 
 incfiles := functions.h
 srcfiles := functions.cpp Monome.cpp Polynome.cpp main.cpp
