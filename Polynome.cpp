@@ -77,6 +77,18 @@ vector<float> Polynome:: getRacines ( void ){
         cout << "Discriminant = "<<discriminant<<endl;
         if (discriminant < 0) {
             cout << " polynome has racine irreel " << endl;
+            // x = (-b) - (i * sqrt( - Discriminant))/2*a
+			float b = this->tabMonomes[1].coeff;
+			float a = this->tabMonomes[2].coeff;
+			float delta = ft_sqrt(- discriminant);
+			cout << "Delta irreel = " << delta << endl;
+			float r1 = (0 - b - delta) / (2 * a);
+			float r2 = (0 - b + delta) / (2 * a);
+			cout << "r1 ireel = " << r1 << endl;
+			cout << "r2 ireel = " << r2 << endl;
+			tabRacine.push_back(r1);
+			tabRacine.push_back(r2);
+
         } else if (discriminant == 0) {
             float b = this->tabMonomes[1].coeff;
             float a = this->tabMonomes[2].coeff;
@@ -181,4 +193,3 @@ Polynome ::Polynome(string str) {
     cout << "je sors de polynome" <<endl;
 
 }
-
