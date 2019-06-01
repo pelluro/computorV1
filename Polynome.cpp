@@ -82,6 +82,11 @@ vector<float> Polynome:: getRacines ( void ){
 			float a = this->tabMonomes[2].coeff;
 			float delta = ft_sqrt(- discriminant);
 			cout << "Delta irreel = " << delta << endl;
+			// je stock dans un tableau deux dimension partie reel et partie complexe separee
+			// partie reel  -b/2a
+			//partie complexe  ( - sqrt( discriminant)/2a)
+
+
 			float r1 = (0 - b - delta) / (2 * a);
 			float r2 = (0 - b + delta) / (2 * a);
 			cout << "r1 ireel = " << r1 << endl;
