@@ -26,7 +26,7 @@ public:
 
     string addPlusBeforeMinus(string str);
     int countMinus(string str);
-//	~Polynome( void );
+	~Polynome( void );
 
 private:
     int getMaxDegree ( void );

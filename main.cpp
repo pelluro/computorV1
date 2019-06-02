@@ -34,8 +34,11 @@ int main() {
         for (int i = 0; i < racines.size(); i++) {
             cout << "Racine " << i << " = " << racines[i] << endl;
         }
-		delete(poly);
+		delete poly;
 	}
     return 0;
 }
 
+
+//4 * x^2 + 3*x = 0
+//4* x^3 - 2^x^3 + x^2 = -2

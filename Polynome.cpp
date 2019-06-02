@@ -87,12 +87,15 @@ vector<float> Polynome:: getRacines ( void ){
 			//partie complexe  ( - sqrt( discriminant)/2a)
 
 
-			float r1 = (0 - b - delta) / (2 * a);
-			float r2 = (0 - b + delta) / (2 * a);
+			float r1 = (0 - b) / (2 * a);
+			float r2 = (0 - delta)/(2 * a);
+			float r3 = (0 + delta)/ (2 * a);
+
 			cout << "r1 ireel = " << r1 << endl;
 			cout << "r2 ireel = " << r2 << endl;
 			tabRacine.push_back(r1);
 			tabRacine.push_back(r2);
+			tabRacine.push_back(r3);
 
         } else if (discriminant == 0) {
             float b = this->tabMonomes[1].coeff;
@@ -197,4 +200,10 @@ Polynome ::Polynome(string str) {
     // il manque une fonction pour arranger les coeff de meme degree
     cout << "je sors de polynome" <<endl;
 
+}
+
+
+Polynome::~Polynome()
+{
+	std::cout << "call destructor Poly" << std::endl;
 }
