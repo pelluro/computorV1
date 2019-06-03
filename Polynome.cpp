@@ -8,7 +8,7 @@
 using namespace std;
 
 
-int Polynome:: getMaxDegree ( void ){
+int Polynome::getMaxDegree ( void ){
     cout << "je rentre dans getMaxDegree" << endl;
     if (this->tabMonomes.size() == 0)
         return 0;
@@ -16,16 +16,17 @@ int Polynome:: getMaxDegree ( void ){
 
     for (int j = 0; j < this->tabMonomes.size(); j++) {
         int degree = this->tabMonomes[j].degree;
-        if(degree>degreeMax)
+        if(degree > degreeMax)
             degreeMax = degree;
     }
     cout << "Degree max = " << degreeMax << endl;
+    this->degreeMax = degreeMax;
     return degreeMax;
 
 }
 
 
-void Polynome:: refactor ( void ){
+void Polynome::refactor ( void ){
     cout << "je rentre dans refactor" <<endl;
     vector<Monome> newTab;
     for (int i = 0; i < this->degreeMax; ++i) {
@@ -53,7 +54,7 @@ void Polynome:: refactor ( void ){
 
 
 
-float Polynome:: getDiscriminant ( void ){
+float Polynome::getDiscriminant ( void ){
     cout << "je rentre dans getDiscriminant" << endl;
     if (this->degreeMax != 2) {
         cout << "The polynomial degree is stricly greater than 2, I can't solve." << endl;
@@ -72,8 +73,15 @@ vector<float> Polynome:: getRacines ( void ){
     cout << "je rentre dans getRacines" << endl;
     vector<float> tabRacine;
 
-    if(this->degreeMax == 2) {
-        float discriminant = this->getDiscriminant();
+    if(this->degreeMax == 3)
+	{
+    	cout << "fonction a degree 3. I can't solve" << endl;
+		return tabRacine;
+	}
+	else
+		{
+
+    	float discriminant = this->getDiscriminant();
         cout << "Discriminant = "<<discriminant<<endl;
         if (discriminant < 0) {
             cout << " polynome has racine irreel " << endl;
