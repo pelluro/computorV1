@@ -161,6 +161,13 @@ int Polynome:: countMinus(string str) {
 
 //rechecke les protection de malloc pour eviter le crash toussa toussa
 
+float Polynome::getRacineSimple( void )
+{
+	float racine = 0;
+
+	return racine;
+}
+
 Polynome ::Polynome(string str) {
 
     string s;

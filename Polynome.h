@@ -22,6 +22,7 @@ public:
 
     void refactor ( void );
     float getDiscriminant ( void );
+    float getRacineSimple (void);
     vector<float> getRacines ( void );
 
     string addPlusBeforeMinus(string str);

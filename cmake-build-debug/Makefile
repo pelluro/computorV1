@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/mipham/Documents/computorV1
+CMAKE_SOURCE_DIR = /home/pelluro/Documents/Work/Computor1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/mipham/Documents/computorV1/cmake-build-debug
+CMAKE_BINARY_DIR = /home/pelluro/Documents/Work/Computor1/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/mipham/Documents/computorV1/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mipham/Documents/computorV1/cmake-build-debug/CMakeFiles /Users/mipham/Documents/computorV1/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles /home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mipham/Documents/computorV1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Computor1
+# Target rules for targets named toto
 
 # Build rule for target.
-Computor1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Computor1
-.PHONY : Computor1
+toto: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 toto
+.PHONY : toto
 
 # fast build rule for target.
-Computor1/fast:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/build
-.PHONY : Computor1/fast
+toto/fast:
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/build
+.PHONY : toto/fast
 
 Monome.o: Monome.cpp.o
 
@@ -129,7 +129,7 @@ Monome.o: Monome.cpp.o
 
 # target to build an object file
 Monome.cpp.o:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Monome.cpp.o
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/Monome.cpp.o
 .PHONY : Monome.cpp.o
 
 Monome.i: Monome.cpp.i
@@ -138,7 +138,7 @@ Monome.i: Monome.cpp.i
 
 # target to preprocess a source file
 Monome.cpp.i:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Monome.cpp.i
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/Monome.cpp.i
 .PHONY : Monome.cpp.i
 
 Monome.s: Monome.cpp.s
@@ -147,7 +147,7 @@ Monome.s: Monome.cpp.s
 
 # target to generate assembly for a file
 Monome.cpp.s:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Monome.cpp.s
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/Monome.cpp.s
 .PHONY : Monome.cpp.s
 
 Polynome.o: Polynome.cpp.o
@@ -156,7 +156,7 @@ Polynome.o: Polynome.cpp.o
 
 # target to build an object file
 Polynome.cpp.o:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Polynome.cpp.o
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/Polynome.cpp.o
 .PHONY : Polynome.cpp.o
 
 Polynome.i: Polynome.cpp.i
@@ -165,7 +165,7 @@ Polynome.i: Polynome.cpp.i
 
 # target to preprocess a source file
 Polynome.cpp.i:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Polynome.cpp.i
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/Polynome.cpp.i
 .PHONY : Polynome.cpp.i
 
 Polynome.s: Polynome.cpp.s
@@ -174,7 +174,7 @@ Polynome.s: Polynome.cpp.s
 
 # target to generate assembly for a file
 Polynome.cpp.s:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/Polynome.cpp.s
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/Polynome.cpp.s
 .PHONY : Polynome.cpp.s
 
 functions.o: functions.cpp.o
@@ -183,7 +183,7 @@ functions.o: functions.cpp.o
 
 # target to build an object file
 functions.cpp.o:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/functions.cpp.o
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/functions.cpp.o
 .PHONY : functions.cpp.o
 
 functions.i: functions.cpp.i
@@ -192,7 +192,7 @@ functions.i: functions.cpp.i
 
 # target to preprocess a source file
 functions.cpp.i:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/functions.cpp.i
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/functions.cpp.i
 .PHONY : functions.cpp.i
 
 functions.s: functions.cpp.s
@@ -201,7 +201,7 @@ functions.s: functions.cpp.s
 
 # target to generate assembly for a file
 functions.cpp.s:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/functions.cpp.s
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/functions.cpp.s
 .PHONY : functions.cpp.s
 
 main.o: main.cpp.o
@@ -210,7 +210,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -219,7 +219,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -228,7 +228,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -238,8 +238,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... toto"
 	@echo "... edit_cache"
-	@echo "... Computor1"
 	@echo "... Monome.o"
 	@echo "... Monome.i"
 	@echo "... Monome.s"

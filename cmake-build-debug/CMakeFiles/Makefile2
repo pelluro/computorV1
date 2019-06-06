@@ -50,54 +50,54 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /home/pelluro/Documents/clion-2019.1.2/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/mipham/Documents/computorV1
+CMAKE_SOURCE_DIR = /home/pelluro/Documents/Work/Computor1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/mipham/Documents/computorV1/cmake-build-debug
+CMAKE_BINARY_DIR = /home/pelluro/Documents/Work/Computor1/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/Computor1.dir
+# Target rules for target CMakeFiles/toto.dir
 
 # All Build rule for target.
-CMakeFiles/Computor1.dir/all:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/depend
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/mipham/Documents/computorV1/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target Computor1"
-.PHONY : CMakeFiles/Computor1.dir/all
+CMakeFiles/toto.dir/all:
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/depend
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target toto"
+.PHONY : CMakeFiles/toto.dir/all
 
 # Include target in all.
-all: CMakeFiles/Computor1.dir/all
+all: CMakeFiles/toto.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Computor1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mipham/Documents/computorV1/cmake-build-debug/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Computor1.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mipham/Documents/computorV1/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/Computor1.dir/rule
+CMakeFiles/toto.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/toto.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pelluro/Documents/Work/Computor1/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/toto.dir/rule
 
 # Convenience name for target.
-Computor1: CMakeFiles/Computor1.dir/rule
+toto: CMakeFiles/toto.dir/rule
 
-.PHONY : Computor1
-
-# clean rule for target.
-CMakeFiles/Computor1.dir/clean:
-	$(MAKE) -f CMakeFiles/Computor1.dir/build.make CMakeFiles/Computor1.dir/clean
-.PHONY : CMakeFiles/Computor1.dir/clean
+.PHONY : toto
 
 # clean rule for target.
-clean: CMakeFiles/Computor1.dir/clean
+CMakeFiles/toto.dir/clean:
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/clean
+.PHONY : CMakeFiles/toto.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/toto.dir/clean
 
 .PHONY : clean
 
