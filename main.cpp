@@ -56,6 +56,7 @@ int main( int ac, char** const av) {
         for (int i = 0; i < racines.size(); i++) {
             cout << "Racine " << i << " = " << racines[i] << endl;
         }
+        delete poly;
 	}
     return 0;
 }

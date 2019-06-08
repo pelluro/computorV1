@@ -14,7 +14,6 @@ int Polynome::getMaxDegree ( void ){
     if (this->tabMonomes.size() == 0)
         return 0;
     int degreeMax = 0;
-
     for (int j = 0; j < this->tabMonomes.size(); j++) {
         int degree = this->tabMonomes[j].getDegree();
         if(degree > degreeMax)
@@ -22,15 +21,19 @@ int Polynome::getMaxDegree ( void ){
     }
     this->degreeMax = degreeMax;
     return degreeMax;
-
 }
 
 
 void Polynome::refactor ( void ){
     vector<Monome> newTab;
+	cout << "Before refactor :" << endl;
+	for (int k = 0; k < this->tabMonomes.size(); ++k) {
+		ComplexNumber c = this->tabMonomes[k].getCoeff();
+		int d = this->tabMonomes[k].getDegree();
+		cout << "(" << c << " * X ^" << d << ")" << endl;
+	}
 
-
-    for (int i = 0; i < this->degreeMax; ++i) {
+    for (int i = 0; i <= this->degreeMax; ++i) {
 		ComplexNumber zero = ComplexNumber(0, 0);
         Monome m(zero,0);
         newTab.push_back(m);
@@ -44,20 +47,22 @@ void Polynome::refactor ( void ){
         newTab[degree].setDegree(degree);
 	}
     this->tabMonomes.clear();
-    for (int j = 0; j <= this->degreeMax; j++) {
-		cout << "coeff => " << newTab[j].getCoeff() << endl;
-		// pour j = 2, prob memoire
-		cout << "degree => " << newTab[j].getDegree() << endl;
-        this->tabMonomes.push_back(newTab[j]);
+	for (int j = newTab.size() - 1; j >= 0 ; j--) {
+		if(newTab[j].getCoeff() != ComplexNumber() || newTab[j].getDegree() == 0)
+        	this->tabMonomes.push_back(newTab[j]);
     }
-    cout << "Refactor done :" << endl;
+	this->degreeMax = this->getMaxDegree();
+	cout << "Refactor done :" << endl;
     for (int k = this->tabMonomes.size() - 1; k >= 0; --k) {
         ComplexNumber c = this->tabMonomes[k].getCoeff();
         int d = this->tabMonomes[k].getDegree();
         if(k < this->tabMonomes.size() - 1)
         	cout << " + ";
-        cout << c << "*X^" << d;
-    }
+        if(d > 0)
+        	cout << c << "*X^" << d;
+        else
+			cout << c;
+	}
     cout << " = 0 " << endl;
 }
 
@@ -94,6 +99,14 @@ vector<ComplexNumber> Polynome:: getRacines ( void ){
 		ComplexNumber a = this->tabMonomes[1].getCoeff();
 		ComplexNumber r =  ComplexNumber() - b / a;
 		tabRacine.push_back(r);
+	}
+	else if ( this->degreeMax == 0)
+	{
+		ComplexNumber a = this->tabMonomes[0].getCoeff();
+		if(a == ComplexNumber())
+			cout << "Infite number of roots" << endl;
+		else
+			cout << "No root" << endl;
 	}
 	else
 		{
@@ -162,7 +175,9 @@ Polynome ::Polynome(string str) {
         string s = rightMonomes[i];
         cout << "Conversion de '" << s << "' en monome" << endl;
         Monome m(s);
-        m.setCoeff(m.getCoeff() * ComplexNumber(-1, 0));
+		ComplexNumber c((m.getCoeff()) * ComplexNumber(-1, 0));
+		cout << c << endl;
+        m.setCoeff(c);
         this->tabMonomes.push_back(m);
     }
 

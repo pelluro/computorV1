@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <exception>
+#include <math.h>
 #include "ComplexNumber.hpp"
 #include "StringHelper.hpp"
 #include "functions.hpp"
@@ -24,6 +25,7 @@ ComplexNumber::ComplexNumber(float r, float i) : _real(r),_imaginary (i)
 
 ComplexNumber::ComplexNumber(std::string s)
 {
+	cout << "Creating ComplexNumber from '" << s << "'" << endl;
 	s = StringHelper::AddPlusBeforeMinus(s);
 	std::vector<string>splitTab = ft_strsplit(s, '+');
 	if (splitTab.size() > 2)
@@ -41,7 +43,7 @@ ComplexNumber::ComplexNumber(std::string s)
 		if (splitTab.size() == 2)
 			this->_real = stoi(splitTab[1]);
 	}
-
+	cout << "Created ComplexNumber = " << *this << endl;
 }
 
 ComplexNumber::ComplexNumber(ComplexNumber const &c)
@@ -119,10 +121,10 @@ std::vector<ComplexNumber> ComplexNumber::getSquareRoots(){
 	float absy;
 	float a = this->getReal();
 	float b = this->getImaginary();
-	float t = ft_sqrt(a *a + b* b);
+	float t = sqrt(a *a + b* b);
 
-	absx = ft_sqrt((a + t) / 2);
-	absy = ft_sqrt((t - a) / 2);
+	absx = sqrt((a + t) / 2);
+	absy = sqrt((t - a) / 2);
 
 	ComplexNumber c1 (absx, absy);
 	ComplexNumber c2 ( -absx, -absy);
