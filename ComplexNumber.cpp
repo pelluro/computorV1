@@ -33,15 +33,20 @@ ComplexNumber::ComplexNumber(std::string s)
 	size_t indexOfi = splitTab[0].find_first_of("i");
 	if(indexOfi == std::string::npos)
 	{
+		cout << "Real en premier";
 		if (splitTab.size() == 2)
-			this->_imaginary = stoi(splitTab[1]);
-		this->_real = stoi(splitTab[0]);
+			this->_imaginary = stof(splitTab[1]);
+		else
+			this->_imaginary = 0;
+		this->_real = stof(splitTab[0]);
 	}
 	else
 	{
-		this->_imaginary = stoi(splitTab[0]);
+		this->_imaginary = stof(splitTab[0]);
 		if (splitTab.size() == 2)
-			this->_real = stoi(splitTab[1]);
+			this->_real = stof(splitTab[1]);
+		else
+			this->_real = 0;
 	}
 	cout << "Created ComplexNumber = " << *this << endl;
 }

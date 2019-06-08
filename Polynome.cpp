@@ -47,7 +47,7 @@ void Polynome::refactor ( void ){
         newTab[degree].setDegree(degree);
 	}
     this->tabMonomes.clear();
-	for (int j = newTab.size() - 1; j >= 0 ; j--) {
+	for (int j = 0; j < newTab.size() ; j++) {
 		if(newTab[j].getCoeff() != ComplexNumber() || newTab[j].getDegree() == 0)
         	this->tabMonomes.push_back(newTab[j]);
     }
@@ -74,11 +74,12 @@ ComplexNumber Polynome::getDiscriminant ( void ){
         cout << "The polynomial degree is stricly greater than 2, I can't solve." << endl;
 		exit(EXIT_FAILURE);
     }
-    ComplexNumber a = this->tabMonomes[2].getCoeff();
+    ComplexNumber a = this->tabMonomes[0].getCoeff();
     ComplexNumber b = this->tabMonomes[1].getCoeff();
-    ComplexNumber c = this->tabMonomes[0].getCoeff();
+    ComplexNumber c = this->tabMonomes[2].getCoeff();
 
     ComplexNumber toto = ComplexNumber(4,0);
+
 	ComplexNumber discriminant = (b  * b) - (toto * a * c);
     return discriminant;
 }
@@ -124,10 +125,15 @@ vector<ComplexNumber> Polynome:: getRacines ( void ){
 			ComplexNumber b = this->tabMonomes[1].getCoeff();
 			ComplexNumber a = this->tabMonomes[2].getCoeff();
 			vector<ComplexNumber> deltas = discriminant.getSquareRoots();
+
 			for (int i = 0; i < deltas.size(); ++i)
 			{
 				ComplexNumber delta = deltas[i];
-				ComplexNumber r = (ComplexNumber() - b + delta) / (ComplexNumber(2,0) * a);
+				cout << "delta = " << delta << endl;
+
+ 				ComplexNumber r = (ComplexNumber() - b + delta) / (ComplexNumber(2,0) * a);
+				cout << "r = " << r << endl;
+
 				tabRacine.push_back(r);
 			}
         }

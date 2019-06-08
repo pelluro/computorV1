@@ -12,16 +12,26 @@ Monome::Monome(string s) {
 
     if(arr.size() > 0) {
     	cout << arr[0] << endl;
-        this->_coeff = ComplexNumber(arr[0]);
         if (arr.size() == 1) {
-            if (s[s.size() - 1] == 'X')
-                this->_degree = 1;
-            else
-                this->_degree = 0;
+        	cout << "Size 1" << endl;
+			if (arr[0][0] == '^')
+			{
+				cout << "Debute par ^" << endl;
+				this->_coeff = ComplexNumber(1,0);
+				arr[0].erase(0, 1);
+				this->_degree = stoi(arr[0]);
+			}
+			else
+			{
+				cout << "coef = '" << arr[0] << "'" << endl;
+				this->_coeff = ComplexNumber(arr[0]);
+				this->_degree = 0;
+			}
         } else {
-            if (arr[1][0] == '^') {
-                arr[1].erase(0, 1);
-            }
+			this->_coeff = ComplexNumber(arr[0]);
+			if (arr[1][0] == '^') {
+				arr[1].erase(0, 1);
+			}
             this->_degree = stoi(arr[1]);
         }
     }
