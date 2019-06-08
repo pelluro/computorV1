@@ -11,12 +11,12 @@
 #include <algorithm>
 #include <string>
 #include <sstream>
-#include "Monome.h"
-#include "Polynome.h"
+#include "Monome.hpp"
+#include "Polynome.hpp"
 
 using namespace std;
 
-float     ft_sqrt(int i);
+float     ft_sqrt(float i);
 vector<string>	ft_strsplit(string s, char c);
 
 #endif

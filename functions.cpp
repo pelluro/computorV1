@@ -2,12 +2,12 @@
 // Created by pelluro on 01/05/19.
 //
 
-#include "functions.h"
+#include "functions.hpp"
 #include <string>
 using namespace std;
 
 
-float	ft_sqrt(int nb)
+float	ft_sqrt(float nb)
 {
     float i;
 
@@ -32,7 +32,6 @@ vector<string>	ft_strsplit(string s, char c)
     unsigned int	size;
 
     i = 0;
-    cout << "split de s = " << s << " avec le char '"<<c<<"'"<< endl;
     while (s[i])
     {
         if (s[i] == c)
@@ -43,11 +42,9 @@ vector<string>	ft_strsplit(string s, char c)
             while (s[i + size] && (s[i + size] != c))
                 size++;
             string split = s.substr(i, size);
-            cout << "split de s en i = " << i << " et size = " << size << " donne : " << split << endl;
             res.push_back(split);
             i = i + size;
         }
     }
-    cout << "Creation d'un tableau de " << res.size() << " elements" << endl;
     return (res);
 }

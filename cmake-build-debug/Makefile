@@ -123,6 +123,33 @@ toto/fast:
 	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/build
 .PHONY : toto/fast
 
+ComplexNumber.o: ComplexNumber.cpp.o
+
+.PHONY : ComplexNumber.o
+
+# target to build an object file
+ComplexNumber.cpp.o:
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/ComplexNumber.cpp.o
+.PHONY : ComplexNumber.cpp.o
+
+ComplexNumber.i: ComplexNumber.cpp.i
+
+.PHONY : ComplexNumber.i
+
+# target to preprocess a source file
+ComplexNumber.cpp.i:
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/ComplexNumber.cpp.i
+.PHONY : ComplexNumber.cpp.i
+
+ComplexNumber.s: ComplexNumber.cpp.s
+
+.PHONY : ComplexNumber.s
+
+# target to generate assembly for a file
+ComplexNumber.cpp.s:
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/ComplexNumber.cpp.s
+.PHONY : ComplexNumber.cpp.s
+
 Monome.o: Monome.cpp.o
 
 .PHONY : Monome.o
@@ -176,6 +203,33 @@ Polynome.s: Polynome.cpp.s
 Polynome.cpp.s:
 	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/Polynome.cpp.s
 .PHONY : Polynome.cpp.s
+
+StringHelper.o: StringHelper.cpp.o
+
+.PHONY : StringHelper.o
+
+# target to build an object file
+StringHelper.cpp.o:
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/StringHelper.cpp.o
+.PHONY : StringHelper.cpp.o
+
+StringHelper.i: StringHelper.cpp.i
+
+.PHONY : StringHelper.i
+
+# target to preprocess a source file
+StringHelper.cpp.i:
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/StringHelper.cpp.i
+.PHONY : StringHelper.cpp.i
+
+StringHelper.s: StringHelper.cpp.s
+
+.PHONY : StringHelper.s
+
+# target to generate assembly for a file
+StringHelper.cpp.s:
+	$(MAKE) -f CMakeFiles/toto.dir/build.make CMakeFiles/toto.dir/StringHelper.cpp.s
+.PHONY : StringHelper.cpp.s
 
 functions.o: functions.cpp.o
 
@@ -240,12 +294,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... toto"
 	@echo "... edit_cache"
+	@echo "... ComplexNumber.o"
+	@echo "... ComplexNumber.i"
+	@echo "... ComplexNumber.s"
 	@echo "... Monome.o"
 	@echo "... Monome.i"
 	@echo "... Monome.s"
 	@echo "... Polynome.o"
 	@echo "... Polynome.i"
 	@echo "... Polynome.s"
+	@echo "... StringHelper.o"
+	@echo "... StringHelper.i"
+	@echo "... StringHelper.s"
 	@echo "... functions.o"
 	@echo "... functions.i"
 	@echo "... functions.s"

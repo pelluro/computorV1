@@ -2,46 +2,64 @@
 // Created by pelluro on 01/05/19.
 //
 
-#include "Monome.h"
-#include "functions.h"
-
+#include "Monome.hpp"
+#include "functions.hpp"
 
 Monome::Monome(string s) {
-    cout << "Creation monome a partir de '" << s << "'" << endl;
+    cout << "Creation Monome a partir de '" << s << "'" << endl;
     vector<string> arr;
     arr = ft_strsplit(s,'x');
 
     if(arr.size() > 0) {
-        this->coeff = stoi(arr[0]);
-        cout << "Coeff = " << this->coeff << endl;
+    	cout << arr[0] << endl;
+        this->_coeff = ComplexNumber(arr[0]);
         if (arr.size() == 1) {
             if (s[s.size() - 1] == 'x')
-                this->degree = 1;
+                this->_degree = 1;
             else
-                this->degree = 0;
+                this->_degree = 0;
         } else {
             if (arr[1][0] == '^') {
                 arr[1].erase(0, 1);
             }
-            this->degree = stoi(arr[1]);
+            this->_degree = stoi(arr[1]);
         }
-        cout << "Degree = " << this->degree << endl;
     }
     else
     {
-        this->degree = 1;
-        this->coeff = 1;
+        this->_degree = 1;
+        this->_coeff = ComplexNumber(1,0);
     }
+    print();
 }
 
-Monome::Monome(float coeff, int degree)
+Monome::Monome(ComplexNumber coeff, int degree)
 {
-    this->degree = degree;
-    this->coeff = coeff;
+    this->_degree = degree;
+    this->_coeff = coeff;
+}
+
+Monome::~Monome()
+{
+}
+
+ComplexNumber Monome::getCoeff ( void ){
+	return this->_coeff;
+}
+
+int Monome::getDegree ( void ){
+	return this->_degree;
+}
+
+void Monome::setCoeff ( ComplexNumber c){
+	this->_coeff = c;
+}
+void Monome::setDegree ( int d){
+	this->_degree = d;
 }
 
 void Monome::print(void) {
-    cout <<"degree est " << this->degree << endl;
-    cout <<"coeff est " << this->coeff << endl;
+    cout <<"degree est " << this->_degree << endl;
+    cout <<"coeff est " << this->_coeff << endl;
 
 }

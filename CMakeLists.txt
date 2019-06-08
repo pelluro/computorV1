@@ -6,10 +6,10 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(toto
         main.cpp
         Monome.cpp
-        Monome.h
+        Monome.hpp
         Polynome.cpp
-        Polynome.h
-        functions.h
+        Polynome.hpp
+        functions.hpp
         Monome.cpp
-        Monome.h
-        functions.cpp)
+        Monome.hpp
+        functions.cpp ComplexNumber.cpp ComplexNumber.hpp StringHelper.cpp StringHelper.hpp)

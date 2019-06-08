@@ -5,7 +5,7 @@
 #ifndef POLYNOME_H
 #define POLYNOME_H
 
-#include "Monome.h"
+#include "Monome.hpp"
 #include <string>
 #include <vector>
 
@@ -21,12 +21,10 @@ public:
 
 
     void refactor ( void );
-    float getDiscriminant ( void );
+	ComplexNumber getDiscriminant ( void );
     float getRacineSimple (void);
-    vector<float> getRacines ( void );
+    vector<ComplexNumber> getRacines ( void );
 
-    string addPlusBeforeMinus(string str);
-    int countMinus(string str);
 	~Polynome( void );
 
 private:

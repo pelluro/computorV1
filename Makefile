@@ -26,7 +26,7 @@ CXX := clang++
 CXXFLAGS := -std=c++11
 
 incfiles := functions.h
-srcfiles := functions.cpp Monome.cpp Polynome.cpp main.cpp
+srcfiles := functions.cpp Monome.cpp Polynome.cpp main.cpp ComplexNumber.cpp StringHelper.cpp
 objects  := $(subst .cpp,.o, $(srcfiles))
 
 all: $(NAME)
