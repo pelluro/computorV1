@@ -4,7 +4,4 @@ a.out
 *.gch
 *.o
 computor
-cmake-build-debug/CMakeFiles/Progress/
-        cmake-build-debug/CMakeFiles/toto.dir/
-        cmake-build-debug/Com1.cbp
-        cmake-build-debug/toto
+cmake-build-debug/*
