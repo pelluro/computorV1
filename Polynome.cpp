@@ -56,7 +56,7 @@ void Polynome::refactor ( void ){
         int d = this->tabMonomes[k].getDegree();
         if(k < this->tabMonomes.size() - 1)
         	cout << " + ";
-        cout << c << "*x^" << d;
+        cout << c << "*X^" << d;
     }
     cout << " = 0 " << endl;
 }

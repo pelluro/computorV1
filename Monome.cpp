@@ -8,13 +8,13 @@
 Monome::Monome(string s) {
     cout << "Creation Monome a partir de '" << s << "'" << endl;
     vector<string> arr;
-    arr = ft_strsplit(s,'x');
+    arr = ft_strsplit(s,'X');
 
     if(arr.size() > 0) {
     	cout << arr[0] << endl;
         this->_coeff = ComplexNumber(arr[0]);
         if (arr.size() == 1) {
-            if (s[s.size() - 1] == 'x')
+            if (s[s.size() - 1] == 'X')
                 this->_degree = 1;
             else
                 this->_degree = 0;

@@ -63,3 +63,8 @@ int main( int ac, char** const av) {
 
 //4* x^3 - 2*x^3 + x^2 = -2
 //2 * x^2 + 4*x + 5 = 0
+///"5 * X^0 + 3 * X^1 + 3 * X^6 = 1 * X^0 + 0 * X => refactor merde
+
+// 4 * X = 4 * X  => segfault
+//5 * X^0 = 5 * X^0 => segfault
+//
