@@ -51,15 +51,15 @@ int main( int ac, char** const av) {
     }
     else {
         cout << "you entered : [" << buff << "]" << endl;
-        Polynome* poly = new Polynome( buff);
+        Polynome *poly = new Polynome( buff);
         vector<ComplexNumber> racines = poly->getRacines();
         for (int i = 0; i < racines.size(); i++) {
             cout << "Racine " << i << " = " << racines[i] << endl;
         }
-		delete poly;
 	}
     return 0;
 }
 
 
 //4* x^3 - 2*x^3 + x^2 = -2
+//2 * x^2 + 4*x + 5 = 0

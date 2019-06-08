@@ -18,11 +18,14 @@ float	ft_sqrt(float nb)
     {
         if (i * i >= nb)
         {
-            return (i);
+
+			return (i);
+
         }
-        i+= 0.000001;
+        i+= 0.0001;
     }
-    return (0);
+
+	return (0);
 }
 
 vector<string>	ft_strsplit(string s, char c)

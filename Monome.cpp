@@ -41,6 +41,7 @@ Monome::Monome(ComplexNumber coeff, int degree)
 
 Monome::~Monome()
 {
+	//std::cout << "call destructeur Momone" << std::endl;
 }
 
 ComplexNumber Monome::getCoeff ( void ){

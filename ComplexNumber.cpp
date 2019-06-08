@@ -3,6 +3,8 @@
 //
 
 #include <iostream>
+#include <vector>
+#include <exception>
 #include "ComplexNumber.hpp"
 #include "StringHelper.hpp"
 #include "functions.hpp"
@@ -13,6 +15,7 @@ ComplexNumber::ComplexNumber(): _real(0),_imaginary (0)
 
 ComplexNumber::~ComplexNumber()
 {
+	//std::cout << " call destructeur ComplexeNumber "  << *this << std::endl;
 }
 
 ComplexNumber::ComplexNumber(float r, float i) : _real(r),_imaginary (i)
@@ -22,6 +25,23 @@ ComplexNumber::ComplexNumber(float r, float i) : _real(r),_imaginary (i)
 ComplexNumber::ComplexNumber(std::string s)
 {
 	s = StringHelper::AddPlusBeforeMinus(s);
+	std::vector<string>splitTab = ft_strsplit(s, '+');
+	if (splitTab.size() > 2)
+		throw std::exception();
+	size_t indexOfi = splitTab[0].find_first_of("i");
+	if(indexOfi == std::string::npos)
+	{
+		if (splitTab.size() == 2)
+			this->_imaginary = stoi(splitTab[1]);
+		this->_real = stoi(splitTab[0]);
+	}
+	else
+	{
+		this->_imaginary = stoi(splitTab[0]);
+		if (splitTab.size() == 2)
+			this->_real = stoi(splitTab[1]);
+	}
+
 }
 
 ComplexNumber::ComplexNumber(ComplexNumber const &c)
@@ -110,6 +130,9 @@ std::vector<ComplexNumber> ComplexNumber::getSquareRoots(){
 	std::vector<ComplexNumber> roots;
 	roots.push_back(c1);
 	roots.push_back(c2);
+	std::cout << "c1 = " << c1 << std::endl;
+	std::cout << "c2 = " << c2 << std::endl;
+
 	return roots;
 }
 
