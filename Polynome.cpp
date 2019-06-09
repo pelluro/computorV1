@@ -177,21 +177,35 @@ Polynome ::Polynome(string str) {
     for (int i = 0; i < leftSize; i++) {
         string s = leftMonomes[i];
         cout << "Conversion de '" << s << "' en monome" << endl;
-        Monome m(s);
-        this->tabMonomes.push_back(m);
+        try {
+        	Monome m(s);
+			this->tabMonomes.push_back(m);
+
+		}
+        catch (std::invalid_argument &e)
+		{
+        	throw (e);
+		}
+
     }
 
     cout << "Lecture des monomes de droite (" << rightSize<< ") elements" << endl;
     for (int i = 0; i < rightSize; i++) {
         string s = rightMonomes[i];
         cout << "Conversion de '" << s << "' en monome" << endl;
-        Monome m(s);
-		ComplexNumber c((m.getCoeff()) * ComplexNumber(-1, 0));
-		cout << c << endl;
-        m.setCoeff(c);
-        this->tabMonomes.push_back(m);
-    }
 
+		try {
+			Monome m(s);
+			ComplexNumber c((m.getCoeff()) * ComplexNumber(-1, 0));
+			cout << c << endl;
+			m.setCoeff(c);
+			this->tabMonomes.push_back(m);
+		}
+		catch (std::invalid_argument &e)
+		{
+			throw (e);
+		}
+    }
 
     this->degreeMax = this->getMaxDegree();
     // il manque une fonction pour arranger les coeff de meme degree

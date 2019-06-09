@@ -24,7 +24,14 @@ Monome::Monome(string s) {
 				cout << "Debute par ^" << endl;
 				this->_coeff = ComplexNumber(1,0);
 				arr[0].erase(0, 1);
-				this->_degree = stoi(arr[0]);
+				try
+				{
+					this->_degree = stoi(arr[0]);
+				}
+				catch (std::invalid_argument &e)
+				{
+					throw (e);
+				}
 			}
 			else
 			{
@@ -37,7 +44,14 @@ Monome::Monome(string s) {
 			if (arr[1][0] == '^') {
 				arr[1].erase(0, 1);
 			}
-            this->_degree = stoi(arr[1]);
+			try
+			{
+				this->_degree = stoi(arr[1]);
+			}
+			catch (std::invalid_argument &e)
+			{
+				throw (e);
+			}
         }
     }
     else

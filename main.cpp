@@ -51,12 +51,21 @@ int main( int ac, char** const av) {
     }
     else {
         cout << "you entered : [" << buff << "]" << endl;
-        Polynome *poly = new Polynome( buff);
-        vector<ComplexNumber> racines = poly->getRacines();
-        for (int i = 0; i < racines.size(); i++) {
-            cout << "Racine " << i << " = " << racines[i] << endl;
-        }
-        delete poly;
+        try
+		{
+			Polynome *poly = new Polynome(buff);
+			vector<ComplexNumber> racines = poly->getRacines();
+			for (int i = 0; i < racines.size(); i++) {
+				cout << "Racine " << i << " = " << racines[i] << endl;
+			}
+			delete poly;
+		}
+        catch (std::invalid_argument)
+		{
+        	std::cout << "Invalid Argument" << endl;
+		}
+
+
 	}
     return 0;
 }
