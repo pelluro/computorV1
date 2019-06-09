@@ -54,10 +54,15 @@ void Polynome::refactor ( void ){
 	this->degreeMax = this->getMaxDegree();
 	cout << "Refactor done :" << endl;
     for (int k = this->tabMonomes.size() - 1; k >= 0; --k) {
+    	if (k > 0 && this->tabMonomes[k].getDegree() == 0)
+			continue;
         ComplexNumber c = this->tabMonomes[k].getCoeff();
         int d = this->tabMonomes[k].getDegree();
         if(k < this->tabMonomes.size() - 1)
-        	cout << " + ";
+		{
+        	if (c.getReal() > 0)
+				cout << "+";
+		}
         if(d > 0)
         	cout << c << "*X^" << d;
         else
