@@ -24,8 +24,16 @@ public:
 	void setCoeff ( ComplexNumber );
 	void setDegree ( int );
 
+	void chooseCase(std::string const & case_name, Monome & target);
+
 
 private:
+	void caseOne(Monome & target);
+	void caseTwo(Monome & target);
+	void caseTwoBis(Monome & target);
+	void caseThree(Monome & target);
+
+	void caseForAll(Monome & target);
 	ComplexNumber _coeff;
 	int _degree;
 };
