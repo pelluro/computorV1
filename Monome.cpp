@@ -8,16 +8,22 @@
 Monome::Monome(string s) {
     cout << "Creation Monome a partir de '" << s << "'" << endl;
     vector<string> arr;
-	if (s == "-X"){
+	if (s == "-X" || s == "-X^1"){
 		this->_coeff = ComplexNumber(-1,0);
 		this->_degree = 1;
+		return;
+	}
+	if (s == "-X^0")
+	{
+		this->_coeff = ComplexNumber(-1,0);
+		this->_degree = 0;
 		return;
 	}
 	arr = ft_strsplit(s,'X');
 
     if(arr.size() > 0) {
     	cout << arr[0] << endl;
-        if (arr.size() == 1) {
+        if (arr.size() == 1 ) {
         	cout << "Size 1" << endl;
 			if (arr[0][0] == '^')
 			{
@@ -32,6 +38,10 @@ Monome::Monome(string s) {
 				{
 					throw (e);
 				}
+			}
+			else if ( arr[0][0] == '^')
+			{
+
 			}
 			else
 			{
@@ -59,7 +69,7 @@ Monome::Monome(string s) {
         this->_degree = 1;
         this->_coeff = ComplexNumber(1,0);
     }
-    print();
+//    print();
 }
 
 Monome::Monome(ComplexNumber coeff, int degree)

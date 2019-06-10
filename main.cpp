@@ -10,28 +10,6 @@
 
 using namespace std; /* std est un namespace special */
 
-//void utilstest(char *q, char *res, int rr){
-//	char buff[256];
-//	int ret;
-//	// clean
-//	ret = getArgument(buff, q);
-//	if (strcmp(res, buff) || ret != rr ){
-//		printf("ko \n");
-//	}
-//	printf("ok \n");
-//
-//}
-//
-//void test_get_argument()
-//{
-//	utilstest("x + 8 = 0", "-8" , 0);
-//}
-//
-//
-//int getArgument(string buff, string s){
-//
-//
-//}
 
 int main( int ac, char** const av) {
 
