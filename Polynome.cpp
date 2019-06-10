@@ -66,7 +66,10 @@ void Polynome::refactor ( void ){
         if(d > 0)
         	cout << c << "*X^" << d;
         else
-			cout << c;
+		{
+        	if (c != ComplexNumber(0,0))
+				cout << c;
+		}
 	}
     cout << " = 0 " << endl;
 }
