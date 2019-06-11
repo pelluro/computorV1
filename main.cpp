@@ -10,35 +10,18 @@
 
 using namespace std; /* std est un namespace special */
 
-//void utilstest(char *q, char *res, int rr){
-//	char buff[256];
-//	int ret;
-//	// clean
-//	ret = getArgument(buff, q);
-//	if (strcmp(res, buff) || ret != rr ){
-//		printf("ko \n");
-//	}
-//	printf("ok \n");
-//
-//}
-//
-//void test_get_argument()
-//{
-//	utilstest("x + 8 = 0", "-8" , 0);
-//}
-//
-//
-//int getArgument(string buff, string s){
-//
-//
-//}
 
 int main( int ac, char** const av) {
 
     string buff;
 /*je redirige tout dans la sortie standard avec le double chevron */
 
+	int	 returnVal = 0;
 	char c = '=';
+	char d = 'X';
+	char e = '*';
+	vector<ComplexNumber> racines;
+	Polynome *poly;
 	if (ac == 2)
 		buff = av[1];
 	size_t found = buff.find(c);
@@ -53,21 +36,25 @@ int main( int ac, char** const av) {
         cout << "you entered : [" << buff << "]" << endl;
         try
 		{
-			Polynome *poly = new Polynome(buff);
-			vector<ComplexNumber> racines = poly->getRacines();
+			poly = new Polynome(buff);
+			racines = poly->getRacines();
 			for (int i = 0; i < racines.size(); i++) {
 				cout << "Racine " << i + 1 << " = " << racines[i] << endl;
 			}
-			delete poly;
-		}
-        catch (std::invalid_argument)
+//			delete poly;
+		} catch (Polynome::DegreeTooHighException &) {
+			cout << "The polynomial degree is stricly greater than 2, I can't solve." << endl;
+			returnVal = EXIT_FAILURE;
+		} catch (std::invalid_argument)
 		{
-        	std::cout << "Invalid Argument" << endl;
+			std::cout << "Invalid Argument" << endl;
+			returnVal = EXIT_FAILURE;
 		}
+		delete poly;
 
 
 	}
-    return 0;
+    return returnVal;
 }
 
 

@@ -45,7 +45,6 @@ bool Monome::chooseCase(std::string const &case_name)
 }
 
 
-
 Monome::Monome(string s) {
     cout << "Creation Monome a partir de '" << s << "'" << endl;
     vector<string> arr;

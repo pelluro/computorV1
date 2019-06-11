@@ -10,6 +10,11 @@
 using namespace std;
 
 
+Polynome::DegreeTooHighException::DegreeTooHighException() {}
+Polynome::DegreeTooHighException::DegreeTooHighException(DegreeTooHighException const &) {}
+Polynome::DegreeTooHighException::~DegreeTooHighException() {}
+
+
 int Polynome::getMaxDegree ( void ){
     if (this->tabMonomes.size() == 0)
         return 0;
@@ -76,11 +81,10 @@ void Polynome::refactor ( void ){
 
 
 
-ComplexNumber Polynome::getDiscriminant ( void ){
+ComplexNumber Polynome::getDiscriminant ( void ) throw (DegreeTooHighException){
 
     if (this->degreeMax != 2) {
-        cout << "The polynomial degree is stricly greater than 2, I can't solve." << endl;
-		exit(EXIT_FAILURE);
+		throw DegreeTooHighException();
     }
     ComplexNumber a = this->tabMonomes[0].getCoeff();
     ComplexNumber b = this->tabMonomes[1].getCoeff();
@@ -93,7 +97,7 @@ ComplexNumber Polynome::getDiscriminant ( void ){
 }
 
 
-vector<ComplexNumber> Polynome:: getRacines ( void ){
+vector<ComplexNumber> Polynome:: getRacines ( void ) throw (DegreeTooHighException){
     vector<ComplexNumber> tabRacine;
 	this->refactor();
 

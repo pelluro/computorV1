@@ -6,6 +6,7 @@
 #define POLYNOME_H
 
 #include "Monome.hpp"
+#include <exception>
 #include <string>
 #include <vector>
 
@@ -14,6 +15,15 @@ using namespace std;
 class Polynome {
 
 public:
+
+	class DegreeTooHighException : public std::exception {
+	public:
+		DegreeTooHighException();
+		DegreeTooHighException(DegreeTooHighException const &);
+		~DegreeTooHighException();
+	private:
+		DegreeTooHighException &	operator =(DegreeTooHighException const &);
+	};
     vector<Monome> tabMonomes;
     int degreeMax;
 
@@ -21,9 +31,9 @@ public:
 
 
     void refactor ( void );
-	ComplexNumber getDiscriminant ( void );
+	ComplexNumber getDiscriminant ( void ) throw (DegreeTooHighException);
     float getRacineSimple (void);
-    vector<ComplexNumber> getRacines ( void );
+    vector<ComplexNumber> getRacines ( void ) throw (DegreeTooHighException);
 
 	~Polynome( void );
 
