@@ -52,7 +52,7 @@ void Polynome::refactor ( void ){
         	this->tabMonomes.push_back(newTab[j]);
     }
 	this->degreeMax = this->getMaxDegree();
-	cout << "Refactor done :" << endl;
+	cout << "Reduced form : " << endl;
     for (int k = this->tabMonomes.size() - 1; k >= 0; --k) {
     	if (k > 0 && this->tabMonomes[k].getDegree() == 0)
 			continue;
@@ -121,7 +121,7 @@ vector<ComplexNumber> Polynome:: getRacines ( void ){
 		{
 
 		ComplexNumber discriminant = this->getDiscriminant();
-        cout << "Discriminant = "<<discriminant <<endl;
+        cout << "Discriminant is: "<<discriminant <<endl;
         if (discriminant == ComplexNumber()) {
 			ComplexNumber b = this->tabMonomes[1].getCoeff();
 			ComplexNumber a = this->tabMonomes[2].getCoeff();
@@ -137,11 +137,7 @@ vector<ComplexNumber> Polynome:: getRacines ( void ){
 			for (int i = 0; i < deltas.size(); ++i)
 			{
 				ComplexNumber delta = deltas[i];
-				cout << "delta = " << delta << endl;
-
  				ComplexNumber r = (ComplexNumber() - b + delta) / (ComplexNumber(2,0) * a);
-				cout << "r = " << r << endl;
-
 				tabRacine.push_back(r);
 			}
         }
@@ -150,7 +146,6 @@ vector<ComplexNumber> Polynome:: getRacines ( void ){
 }
 
 
-//rechecke les protection de malloc pour eviter le crash toussa toussa
 
 
 Polynome ::Polynome(string str) {
@@ -211,7 +206,6 @@ Polynome ::Polynome(string str) {
     }
 
     this->degreeMax = this->getMaxDegree();
-    // il manque une fonction pour arranger les coeff de meme degree
 
 }
 

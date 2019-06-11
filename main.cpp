@@ -56,7 +56,7 @@ int main( int ac, char** const av) {
 			Polynome *poly = new Polynome(buff);
 			vector<ComplexNumber> racines = poly->getRacines();
 			for (int i = 0; i < racines.size(); i++) {
-				cout << "Racine " << i << " = " << racines[i] << endl;
+				cout << "Racine " << i + 1 << " = " << racines[i] << endl;
 			}
 			delete poly;
 		}

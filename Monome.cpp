@@ -5,36 +5,42 @@
 #include "Monome.hpp"
 #include "functions.hpp"
 
-void Monome::caseOne(Monome &target)
+
+void Monome::caseOne( void )
 {
-	target._coeff = ComplexNumber(-1,0);
-	target._degree = 0;
+	this->_coeff = ComplexNumber(-1,0);
+	this->_degree = 0;
 }
 
-void Monome::caseTwo(Monome &target)
+void Monome::caseTwo( void )
 {
-	target._coeff = ComplexNumber(-1,0);
-	target._degree = 1;
+	this->_coeff = ComplexNumber(-1,0);
+	this->_degree = 1;
 }
 
-void Monome::caseThree(Monome &target)
+void Monome::caseThree( void )
 {
-	target._coeff = ComplexNumber(-1,0);
-	target._degree = 2;
+	this->_coeff = ComplexNumber(-1,0);
+	this->_degree = 2;
 }
 
-typedef void (Monome::*choosePtr) (Monome &);
 
-void Monome::chooseCase(std::string const &case_name, Monome &target)
+bool Monome::chooseCase(std::string const &case_name)
 {
-	string nameCase[4] = {"-X^0", "-X",  "-X^1","-X^2" };
-	choosePtr  cases[4] = {& Monome::caseOne, &Monome::caseTwo,&Monome::caseTwo,
-						  &Monome::caseThree};
+	static const tChooseCase			casePicker[4] = {
+	 	{"-X^0", &Monome::caseOne},
+	 	{"-X", &Monome::caseTwo},
+	 	{"-X^1", &Monome::caseTwo},
+	 	{"-X^2", &Monome::caseThree}
+	};
 	for (int i = 0; i <4; i++)
 	{
-		if (!nameCase[i].compare(case_name))
-			(this->*cases[i])(target);
+		if (case_name.compare(casePicker[i].nameCase) == 0){
+			(this->*casePicker[i].funName)();
+			return (true);
+		}
 	}
+	return (false);
 
 }
 
@@ -43,23 +49,9 @@ void Monome::chooseCase(std::string const &case_name, Monome &target)
 Monome::Monome(string s) {
     cout << "Creation Monome a partir de '" << s << "'" << endl;
     vector<string> arr;
-//    this->chooseCase( s, *this);
-	if (s == "-X^0")
-	{
-		this->_coeff = ComplexNumber(-1,0);
-		this->_degree = 0;
-		return;
-	}
-	if (s == "-X" || s == "-X^1"){
-		this->_coeff = ComplexNumber(-1,0);
-		this->_degree = 1;
-		return;
-	}
-	if (s == "-X^2"){
-		this->_coeff = ComplexNumber(-1,0);
-		this->_degree = 2;
-		return;
-	}
+    if (this->chooseCase( s)) {
+    	return ;
+    }
 	arr = ft_strsplit(s,'X');
 
     if(arr.size() > 0) {

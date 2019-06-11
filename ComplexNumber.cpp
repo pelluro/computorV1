@@ -137,8 +137,8 @@ std::vector<ComplexNumber> ComplexNumber::getSquareRoots(){
 	std::vector<ComplexNumber> roots;
 	roots.push_back(c1);
 	roots.push_back(c2);
-	std::cout << "c1 = " << c1 << std::endl;
-	std::cout << "c2 = " << c2 << std::endl;
+	std::cout << "delta1 = " << c1 << std::endl;
+	std::cout << "delta2 = " << c2 << std::endl;
 
 	return roots;
 }
