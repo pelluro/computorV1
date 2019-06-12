@@ -37,7 +37,13 @@ ComplexNumber::ComplexNumber(std::string s)
 			this->_imaginary = stof(splitTab[1]);
 		else
 			this->_imaginary = 0;
-		this->_real = stof(splitTab[0]);
+		try
+		{
+			this->_real = stof(splitTab[0]);
+		}
+		catch (std::out_of_range &e)
+		{
+		}
 	}
 	else
 	{

@@ -69,7 +69,6 @@ Monome::Monome(string s) {
 				}
 				catch (std::invalid_argument &e)
 				{
-					throw (e);
 				}
 			}
 			else
@@ -90,9 +89,8 @@ Monome::Monome(string s) {
 			{
 				this->_degree = stoi(arr[1]);
 			}
-			catch (std::invalid_argument &e)
+			catch (std::out_of_range &)
 			{
-				throw (e);
 			}
         }
     }
