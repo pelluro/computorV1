@@ -38,20 +38,30 @@ int main( int ac, char** const av) {
         try
 		{
 			poly = new Polynome(buff);
-			racines = poly->getRacines();
-			for (int i = 0; i < racines.size(); i++) {
-				cout << "Racine " << i + 1 << " = " << racines[i] << endl;
+			try
+			{
+				racines = poly->getRacines();
+				for (int i = 0; i < racines.size(); i++)
+				{
+					cout << "Racine " << i + 1 << " = " << racines[i] << endl;
+				}
 			}
-//			delete poly;
-		} catch (Polynome::DegreeTooHighException &) {
-			cout << "The polynomial degree is stricly greater than 2, I can't solve." << endl;
-			returnVal = EXIT_FAILURE;
-		} catch (std::invalid_argument)
+			catch (Polynome::DegreeTooHighException &) {
+				cout << "The polynomial degree is stricly greater than 2, I can't solve." << endl;
+				returnVal = EXIT_FAILURE;
+			}
+			delete poly;
+		}  catch (std::invalid_argument)
 		{
 			std::cout << "Invalid Argument" << endl;
 			returnVal = EXIT_FAILURE;
 		}
-		delete poly;
+		catch (std::out_of_range &)
+		{
+			std::cout << "Out Of Range" << endl;
+			returnVal = EXIT_FAILURE;
+		}
+//		delete poly;
 	}
     return returnVal;
 }

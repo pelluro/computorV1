@@ -63,13 +63,7 @@ Monome::Monome(string s) {
 			{
 				this->_coeff = ComplexNumber(1,0);
 				arr[0].erase(0, 1);
-				try
-				{
-					this->_degree = stoi(arr[0]);
-				}
-				catch (std::invalid_argument &e)
-				{
-				}
+				this->_degree = stoi(arr[0]);
 			}
 			else
 			{
@@ -85,13 +79,7 @@ Monome::Monome(string s) {
 			if (arr[1][0] == '^') {
 				arr[1].erase(0, 1);
 			}
-			try
-			{
-				this->_degree = stoi(arr[1]);
-			}
-			catch (std::out_of_range &)
-			{
-			}
+			this->_degree = stoi(arr[1]);
         }
     }
     else

@@ -36,7 +36,6 @@ private:
 		std::string		nameCase;
 		void 			(Monome::*funName)(void);
 	}					tChooseCase;
-	void caseForAll(Monome & target);
 	ComplexNumber _coeff;
 	int _degree;
 };

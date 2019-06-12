@@ -189,6 +189,10 @@ Polynome ::Polynome(string str)  {
 		{
         	throw (e);
 		}
+        catch (std::out_of_range &e)
+		{
+        	throw (e);
+		}
 
     }
 
