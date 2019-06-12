@@ -48,6 +48,8 @@ bool Monome::chooseCase(std::string const &case_name)
 Monome::Monome(string s) {
     cout << "Creation Monome a partir de '" << s << "'" << endl;
     vector<string> arr;
+    size_t f = s.find('X');
+
     if (this->chooseCase( s)) {
     	return ;
     }
@@ -74,7 +76,10 @@ Monome::Monome(string s) {
 			{
 				cout << "coef = '" << arr[0] << "'" << endl;
 				this->_coeff = ComplexNumber(arr[0]);
-				this->_degree = 0;
+				if (f != string::npos)
+					this->_degree = 1;
+				else
+					this->_degree = 0;
 			}
         } else {
 			this->_coeff = ComplexNumber(arr[0]);
