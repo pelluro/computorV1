@@ -6,8 +6,7 @@
 using namespace std;
 
 
-string StringHelper::AddPlusBeforeMinus(string str){
-
+string StringHelper::AddPlusBeforeMinus(string str) {
 	int i = 0;
 	int j = 0 ;
 	int minus = CountMinus(str);
@@ -35,3 +34,9 @@ int StringHelper:: CountMinus(string str) {
 	}
 	return minus;
 }
+
+/*
+StringHelper::StringNotValidException::StringNotValidException(){};
+StringHelper::StringNotValidException::StringNotValidException(StringNotValidException const &){};
+StringHelper::StringNotValidException::~StringNotValidException(){};
+*/

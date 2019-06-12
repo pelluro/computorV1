@@ -7,6 +7,7 @@
 #include <string>
 #include <cstring>
 #include "functions.hpp"
+#include "StringHelper.hpp"
 
 using namespace std; /* std est un namespace special */
 
@@ -18,19 +19,19 @@ int main( int ac, char** const av) {
 
 	int	 returnVal = 0;
 	char c = '=';
-	char d = 'X';
-	char e = '*';
 	vector<ComplexNumber> racines;
+
 	Polynome *poly;
 	if (ac == 2)
 		buff = av[1];
 	size_t found = buff.find(c);
-
-    if (buff == "") {
+    if (buff == "" || found == 0 || found == buff.size() -1 ) {
         cerr << "error input"  << endl;
+		returnVal = EXIT_FAILURE;
     }
     else if (found == string::npos){
-			cerr << "Not a polynome valid " << endl;
+    	cerr << "Not a polynome valid " << endl;
+		returnVal = EXIT_FAILURE;
     }
     else {
         cout << "you entered : [" << buff << "]" << endl;
@@ -51,8 +52,6 @@ int main( int ac, char** const av) {
 			returnVal = EXIT_FAILURE;
 		}
 		delete poly;
-
-
 	}
     return returnVal;
 }

@@ -152,7 +152,7 @@ vector<ComplexNumber> Polynome:: getRacines ( void ) throw (DegreeTooHighExcepti
 
 
 
-Polynome ::Polynome(string str) {
+Polynome ::Polynome(string str)  {
 
     string s;
     string leftEquation;
@@ -160,7 +160,8 @@ Polynome ::Polynome(string str) {
 
 	str.erase(remove(str.begin(), str.end(), ' '), str.end());
     vector<string> x = ft_strsplit(str, '=');
-
+	if (x.size() <= 1)
+		return;
     leftEquation = StringHelper::AddPlusBeforeMinus(x[0]);
     rightEquation = StringHelper::AddPlusBeforeMinus(x[1]);
 

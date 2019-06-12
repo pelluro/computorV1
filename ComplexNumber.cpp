@@ -33,7 +33,6 @@ ComplexNumber::ComplexNumber(std::string s)
 	size_t indexOfi = splitTab[0].find_first_of("i");
 	if(indexOfi == std::string::npos)
 	{
-		cout << "Real en premier";
 		if (splitTab.size() == 2)
 			this->_imaginary = stof(splitTab[1]);
 		else
@@ -58,8 +57,10 @@ ComplexNumber::ComplexNumber(ComplexNumber const &c)
 
 ComplexNumber& ComplexNumber::operator=(ComplexNumber const & rhs)
 {
+
 	this->_real = rhs._real;
 	this->_imaginary = rhs._imaginary;
+
 	return *this;
 
 }

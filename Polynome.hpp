@@ -32,7 +32,6 @@ public:
 
     void refactor ( void );
 	ComplexNumber getDiscriminant ( void ) throw (DegreeTooHighException);
-    float getRacineSimple (void);
     vector<ComplexNumber> getRacines ( void ) throw (DegreeTooHighException);
 
 	~Polynome( void );

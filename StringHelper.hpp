@@ -11,7 +11,16 @@ class StringHelper
 public:
 	StringHelper();
 	~StringHelper();
-
+/*
+	class StringNotValidException : public std::exception {
+	public:
+		StringNotValidException();
+		StringNotValidException(StringNotValidException const &);
+		~StringNotValidException();
+	private:
+		StringNotValidException &	operator =(StringNotValidException const &);
+	};
+*/
 	static std::string AddPlusBeforeMinus (std::string s);
 
 private:
