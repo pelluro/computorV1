@@ -53,7 +53,6 @@ ComplexNumber::ComplexNumber(std::string s)
 		else
 			this->_real = 0;
 	}
-	cout << "Created ComplexNumber = " << *this << endl;
 }
 
 ComplexNumber::ComplexNumber(ComplexNumber const &c)

@@ -23,7 +23,7 @@ _BLUE = \033[34m
 # la norme c+11 et c+98 sont pas pareil
 
 CXX := clang++
-CXXFLAGS := -std=c++11
+CXXFLAGS := -std=c++11 -Wall -Wextra -Werror
 
 incfiles := functions.h
 srcfiles := functions.cpp Monome.cpp Polynome.cpp main.cpp ComplexNumber.cpp StringHelper.cpp

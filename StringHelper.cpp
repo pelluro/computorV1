@@ -8,7 +8,6 @@ using namespace std;
 
 string StringHelper::AddPlusBeforeMinus(string str) {
 	int i = 0;
-	int j = 0 ;
 	int minus = CountMinus(str);
 	if(minus == 0)
 		return  str;

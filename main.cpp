@@ -9,13 +9,12 @@
 #include "functions.hpp"
 #include "StringHelper.hpp"
 
-using namespace std; /* std est un namespace special */
+using namespace std;
 
 
 int main( int ac, char** const av) {
 
     string buff;
-/*je redirige tout dans la sortie standard avec le double chevron */
 
 	int	 returnVal = 0;
 	char c = '=';
@@ -41,7 +40,7 @@ int main( int ac, char** const av) {
 			try
 			{
 				racines = poly->getRacines();
-				for (int i = 0; i < racines.size(); i++)
+				for (size_t i = 0; i < racines.size(); i++)
 				{
 					cout << "Racine " << i + 1 << " = " << racines[i] << endl;
 				}
@@ -51,7 +50,7 @@ int main( int ac, char** const av) {
 				returnVal = EXIT_FAILURE;
 			}
 			delete poly;
-		}  catch (std::invalid_argument)
+		}  catch (std::invalid_argument &)
 		{
 			std::cout << "Invalid Argument" << endl;
 			returnVal = EXIT_FAILURE;
@@ -61,7 +60,6 @@ int main( int ac, char** const av) {
 			std::cout << "Out Of Range" << endl;
 			returnVal = EXIT_FAILURE;
 		}
-//		delete poly;
 	}
     return returnVal;
 }
@@ -69,8 +67,8 @@ int main( int ac, char** const av) {
 
 //4* x^3 - 2*x^3 + x^2 = -2
 //2 * x^2 + 4*x + 5 = 0
-///"5 * X^0 + 3 * X^1 + 3 * X^6 = 1 * X^0 + 0 * X => refactor merde
+///"5 * X^0 + 3 * X^1 + 3 * X^6 = 1 * X^0 + 0 * X
 
-// 4 * X = 4 * X  => segfault
-//5 * X^0 = 5 * X^0 => segfault
+// 4 * X = 4 * X
+//5 * X^0 = 5 * X^0
 //

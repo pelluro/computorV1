@@ -58,7 +58,6 @@ Monome::Monome(string s) {
     if(arr.size() > 0) {
     	cout << arr[0] << endl;
         if (arr.size() == 1) {
-        	cout << "Size 1" << endl;
 			if (arr[0][0] == '^')
 			{
 				this->_coeff = ComplexNumber(1,0);
@@ -67,7 +66,6 @@ Monome::Monome(string s) {
 			}
 			else
 			{
-				cout << "coef = '" << arr[0] << "'" << endl;
 				this->_coeff = ComplexNumber(arr[0]);
 				if (f != string::npos)
 					this->_degree = 1;
